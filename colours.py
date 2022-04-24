@@ -9,3 +9,8 @@ an unique experience for the user.
 # Language and Script imports
 import colorama
 from colorama import init, Fore, Back, Style
+
+"""
+Sets the colours to auto-reset at each stage
+"""
+colorama.init(autoreset=True)
