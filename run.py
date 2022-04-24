@@ -142,9 +142,18 @@ def start_game():
     and initiate the relevent functions as the
     game progresses.
     """
+    clear()
+    title()
 
 
-title()
-clear()
-new_line()
-game_menu()
+def init_program():
+    """
+    Starts the python code.
+    """
+    title()
+    game_menu()
+
+
+# Initiates the program upon loading - Also Script Guard
+if __name__ == "__main__":
+    init_program()
