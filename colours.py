@@ -14,3 +14,11 @@ from colorama import init, Fore, Back, Style
 Sets the colours to auto-reset at each stage
 """
 colorama.init(autoreset=True)
+
+class Colours:
+    """
+    Gives the colours in colorama a set class
+    allowing to easily chaneg the colour
+    of text in the game.
+    """
+    
