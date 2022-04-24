@@ -95,6 +95,7 @@ def rules():
     Displays to the user the rules of the game
     and how to play the game.
     """
+    time.sleep(1)
     print(Txt.MAIN + Txt.BRIGHT + "Game Rules: ")
     new_line()
     print(Txt.MAIN + "The objective of the game: ")
