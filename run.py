@@ -7,7 +7,6 @@ Developed by Dan Pearce using the Python language!
 import os
 from colours import Colours as Txt
 
-
 # Global Variables
 
 # Main Functions
@@ -63,6 +62,7 @@ def new_line():
     Prints a line, visually matching the game's title colours
     Creates more readability in the console
     """
+    print((f"{Txt.USER}_ " + f"{Txt.COMP}_ ") * 26 + "\n")
 
 
 def game_menu():
@@ -90,3 +90,5 @@ def start_game():
 
 
 title()
+clear()
+new_line()
