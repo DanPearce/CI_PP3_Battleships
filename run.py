@@ -4,6 +4,7 @@ The command-line version of Battleships
 Developed by Dan Pearce using the Python language!
 """
 # Langauge and Script imports
+from colours import Colours as Txt
 
 # Global Variables
 
@@ -52,4 +53,3 @@ def start_game():
     and initiate the relevent functions as the
     game progresses.
     """
-
