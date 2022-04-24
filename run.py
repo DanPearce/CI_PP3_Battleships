@@ -4,7 +4,9 @@ The command-line version of Battleships
 Developed by Dan Pearce using the Python language!
 """
 # Langauge and Script imports
+import os
 from colours import Colours as Txt
+
 
 # Global Variables
 
@@ -53,6 +55,7 @@ def clear():
     """
     Clears the console to be more visually appealing to the user
     """
+    os.system("cls" if os.name == "nt" else "clear")
 
 
 def new_line():
