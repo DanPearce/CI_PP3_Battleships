@@ -16,6 +16,37 @@ def title():
     Display the game's main 'title' screen.
     Game name and development credit.
     """
+    print(" ")
+    print(Txt.MAIN + Txt.BRIGHT + "Let's Play")
+    print(" ")
+    print(Txt.USER + ":::::::::      ::: ::::::::::: ::::::::::: :::      " +
+          "  :::::::::: ::::::::  :::    ::: ::::::::::: :::::::::   ::::::" +
+          ":: ")
+    print(Txt.USER + ":+:    :+:   :+: :+:   :+:         :+:     :+:      " +
+          "  :+:       :+:    :+: :+:    :+:     :+:     :+:    :+: :+:    " +
+          ":+:")
+    print(Txt.USER + "+:+    +:+  +:+   +:+  +:+         +:+     +:+      " +
+          "  +:+       +:+        +:+    +:+     +:+     +:+    +:+ +:+   " +
+          "    ")
+    print(Txt.NEUT + "+#++:++#+  +#++:++#++: +#+         +#+     +#+      " +
+          "  +#++:++#  +#++:++#++ +#++:++#++     +#+     +#++:++#+  +#++:+" +
+          "+#++")
+    print(Txt.COMP + "+#+    +#+ +#+     +#+ +#+         +#+     +#+      " +
+          "  +#+              +#+ +#+    +#+     +#+     +#+              " +
+          " +#+")
+    print(Txt.COMP + "#+#    #+# #+#     #+# #+#         #+#     #+#      " +
+          "  #+#       #+#    #+# #+#    #+#     #+#     #+#        #+#   " +
+          " #+#")
+    print(Txt.COMP + "#########  ###     ### ###         ###     ##########" +
+          " ########## ########  ###    ### ########### ###         ######## ")
+    print(" ")
+    print("                                                               " +
+          "                                        " + f"{Txt.USER}You" +
+          f" {Txt.NEUT}VS " + f"{Txt.COMP}Computer")
+    print(" ")
+    print(Txt.MAIN + Txt.BRIGHT + "Developed by: Dan Pearce -  https://" +
+          "danpearce.software/")
+    print(" ")
 
 
 def clear():
@@ -53,3 +84,6 @@ def start_game():
     and initiate the relevent functions as the
     game progresses.
     """
+
+
+title()
