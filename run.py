@@ -75,7 +75,19 @@ def game_menu():
     or to play the game
     """
     time.sleep(1)
-    print("TEST")
+    print(Txt.MAIN + "Please choose an option:")
+    game_options = Txt.MAIN + "1) Play the game\n2) View the rules\n\n"
+    user_option = input(game_options)
+
+    while user_option not in ("1", "2"):
+        print(Txt.ERROR + "Please choose a correct option, either '1' or '2'")
+        user_option = input(game_options)
+    if user_option == "1":
+        start_game()
+    elif user_option == "2":
+        clear()
+        title()
+        rules()
 
 
 def rules():
