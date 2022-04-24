@@ -95,6 +95,45 @@ def rules():
     Displays to the user the rules of the game
     and how to play the game.
     """
+    print(Txt.MAIN + Txt.BRIGHT + "Game Rules: ")
+    new_line()
+    print(Txt.MAIN + "The objective of the game: ")
+    time.sleep(1.5)
+    print(Txt.MAIN + "- Destroy all of the computer's ships!")
+    time.sleep(1.5)
+    print(Txt.MAIN + "- Before it destroys all of yours!")
+    new_line()
+    time.sleep(1.5)
+    print(Txt.MAIN + "You will play against the computer on an 8 x 8 board.")
+    time.sleep(1.5)
+    print(Txt.MAIN + "You will be instructed to place 5 ships onto the board.")
+    time.sleep(1.5)
+    print(Txt.MAIN + "The computer will also select five locations of ships.")
+    time.sleep(1.5)
+    print(Txt.MAIN + "You will then turn by turn aim and place bombs onto " +
+          "the computer's board to see if you have hit one of its ships.")
+    time.sleep(1.5)
+    print(Txt.MAIN + "The computer wil randomly do the same to your board.")
+    new_line()
+    time.sleep(1.5)
+    print(Txt.MAIN + "Can you beat the machine?")
+    new_line()
+    time.sleep(1.5)
+    print(Txt.MAIN + "What would you like to do?")
+    game_options = Txt.MAIN + "1) Play the game\n2) Return to the game menu\n"
+    user_option = input(game_options)
+
+    while user_option not in ("1", "2"):
+        print(Txt.ERROR + "Please choose a correct option, either '1' or '2'")
+        user_option = input(game_options)
+
+    if user_option == "1":
+        start_game()
+
+    elif user_option == "2":
+        clear()
+        title()
+        game_menu()
 
 
 def start_game():
