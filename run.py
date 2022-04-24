@@ -5,6 +5,7 @@ Developed by Dan Pearce using the Python language!
 """
 # Langauge and Script imports
 import os
+import time
 from colours import Colours as Txt
 
 # Global Variables
@@ -48,6 +49,7 @@ def title():
     print(Txt.MAIN + Txt.BRIGHT + "Developed by: Dan Pearce -  https://" +
           "danpearce.software/")
     print(" ")
+    new_line()
 
 
 def clear():
@@ -72,6 +74,8 @@ def game_menu():
     view the rules
     or to play the game
     """
+    time.sleep(1)
+    print("TEST")
 
 
 def rules():
@@ -92,3 +96,4 @@ def start_game():
 title()
 clear()
 new_line()
+game_menu()
