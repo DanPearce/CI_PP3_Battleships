@@ -248,6 +248,17 @@ def ship_on_board_check(board, ship, orient, row, col):
     - orient: to check the orientation for both types of r/c.
     - row/col: to check the position agaisnt the ship size.
     """
+    if board == COMPUTER_PLACE_BOARD:
+        if orient == "H":
+            if col + ship > 8:
+                return False
+            else:
+                return True
+        else:
+            if row + ship > 8:
+                return False
+            else:
+                return True
 
 
 def ship_over_ship_check(board, ship, orient, row, col):
