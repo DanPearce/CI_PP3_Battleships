@@ -259,6 +259,21 @@ def ship_on_board_check(board, ship, orient, row, col):
                 return False
             else:
                 return True
+    else:
+        if orient == "H":
+            if col + ship > 8:
+                print(Txt.ERROR + "Oops! The ship cannot go off the board!" +
+                      "Please try again!")
+                return False
+            else:
+                return True
+        else:
+            if row + ship > 8:
+                print(Txt.ERROR + "Oops! The ship cannot go off the board!" +
+                      "Please try again!")
+                return False
+            else:
+                return True
 
 
 def ship_over_ship_check(board, ship, orient, row, col):
