@@ -164,19 +164,7 @@ def start_game():
     """
     clear()
     title()
-
-
-def init_program():
-    """
-    Starts the python code.
-    """
-    title()
-    game_menu()
-
-
-# Initiates the program upon loading - Also Script Guard
-if __name__ == "__main__":
-    init_program()
+    display_board(USER_PLACE_BOARD)
 
 
 # Main Game Functions
@@ -189,6 +177,13 @@ def display_board(board):
     Passing: board so that the correct board can be
     displayed.
     """
+    if board == USER_PLACE_BOARD or board == USER_GUESS_BOARD:
+        print(Txt.USER + "  A B C D E F G H")
+        print(Txt.USER + "  _ _ _ _ _ _ _ _")
+        row_num = 1
+        for row in board:
+            print(Txt.USER + "%d|%s" % (row_num, f"{Txt.USER}|".join(row)))
+            row_num += 1
 
 
 def place_ships(board):
@@ -253,3 +248,16 @@ def move(board):
     and will also place the 'bombs'/'misses' onto the board
     Passing: board to check which board we are using.
     """
+
+
+def init_program():
+    """
+    Starts the python code.
+    """
+    title()
+    game_menu()
+
+
+# Initiates the program upon loading - Also Script Guard
+if __name__ == "__main__":
+    init_program()
