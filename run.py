@@ -229,6 +229,12 @@ def place_ships(board):
                         else:
                             for i in range(row, row + ship):
                                 board[i][col] = "X"
+                        clear()
+                        title()
+                        new_line()
+                        print(Txt.USER + "Your board:")
+                        display_board(USER_PLACE_BOARD)
+                        break
 
 
 def ship_on_board_check(board, ship, orient, row, col):
