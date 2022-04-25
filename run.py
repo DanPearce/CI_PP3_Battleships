@@ -438,6 +438,16 @@ def move(board):
             board[row][col] = f"{Txt.COMP}X"
         else:
             board[row][col] = f"{Txt.COMP}~"
+    else:
+        row, col = random.randint(0, 7), random.randint(0, 7)
+        if board[row][col] == f"{Txt.USER}~":
+            move(board)
+        elif board[row][col] == f"{Txt.USER}X":
+            move(board)
+        elif USER_PLACE_BOARD[row][col] == "X":
+            board[row][col] = f"{Txt.USER}X"
+        else:
+            board[row][col] = f"{Txt.USER}~"
 
 
 def init_program():
