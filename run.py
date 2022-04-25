@@ -364,6 +364,21 @@ def user_input(place_ship):
                 print(Txt.ERROR + "Incorrect input, please enter a " +
                       "letter between A & H:\n")
         return orient, row, col
+    else:
+        while True:
+            try:
+                row = input(Txt.MAIN + "Please enter the row you'd like to" +
+                            "guess the computer's ship (1-8):\n")
+                while row not in ("1", "2", "3", "4", "5", "6", "7", "8"):
+                    print(Txt.ERROR + "Incorrect input, please enter a" +
+                          " number between 1 & 8:\n")
+                    break
+                if row in ("1", "2", "3", "4", "5", "6", "7", "8"):
+                    row = int(row) - 1
+                    break
+            except ValueError:
+                print(Txt.ERROR + "Incorrect input, please enter a" +
+                      " number between 1 & 8:\n")
 
 
 def ships_hit(board):
