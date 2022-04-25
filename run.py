@@ -297,6 +297,20 @@ def ship_over_ship_check(board, ship, orient, row, col):
                 if board[i][col] == "X":
                     return True
         return False
+    else:
+        if orient == "H":
+            for i in range(col, col + ship):
+                if board[row][i] == "X":
+                    print(Txt.ERROR + "Try again! The ship cannot go over" +
+                          "another ship!")
+                    return True
+        else:
+            for i in range(row, row + ship):
+                if board[i][col] == "X":
+                    print(Txt.ERROR + "Try again! The ship cannot go over" +
+                          "another ship!")
+                    return True
+        return False
 
 
 def user_input(place_ship):
