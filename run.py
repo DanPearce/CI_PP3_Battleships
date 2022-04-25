@@ -172,6 +172,30 @@ def start_game():
     print(Txt.MAIN + "Please place your ships:")
     place_ships(USER_PLACE_BOARD)
     new_line()
+    while True:
+        while True:
+            print(Txt.MAIN + "Your guessing board:\n")
+            display_board(USER_GUESS_BOARD)
+            move(USER_GUESS_BOARD)
+            break
+        if ships_hit(USER_GUESS_BOARD) == 15:
+            clear()
+            title()
+            print(Txt.USER + "Congratulations, you have won!")
+            new_line()
+        while True:
+            move(COMPUTER_GUESS_BOARD)
+            break
+        clear()
+        title()
+        print(Txt.MAIN + "Computer's guessing board:\n")
+        display_board(COMPUTER_GUESS_BOARD)
+        new_line()
+        if ships_hit(COMPUTER_GUESS_BOARD) == 15:
+            clear()
+            title()
+            print(Txt.ERROR + "Sorry, you have lost to the machine!...")
+            new_line()
 
 
 # Main Game Functions
@@ -375,7 +399,7 @@ def user_input(place_ship):
         while True:
             try:
                 row = input(Txt.MAIN + "Please enter the row you'd like to" +
-                            "guess the computer's ship (1-8):\n")
+                            " guess the computer's ship (1-8):\n")
                 while row not in ("1", "2", "3", "4", "5", "6", "7", "8"):
                     print(Txt.ERROR + "Incorrect input, please enter a" +
                           " number between 1 & 8:\n")
