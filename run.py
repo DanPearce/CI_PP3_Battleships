@@ -363,6 +363,7 @@ def user_input(place_ship):
             except ValueError:
                 print(Txt.ERROR + "Incorrect input, please enter a " +
                       "letter between A & H:\n")
+        return orient, row, col
 
 
 def ships_hit(board):
