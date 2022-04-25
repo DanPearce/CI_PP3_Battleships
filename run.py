@@ -208,7 +208,7 @@ def place_ships(board):
                 orient = random.choice(["H", "V"])
                 row, col = random.randint(0, 7), random.randint(0, 7)
                 if ship_on_board_check(board, ship, orient, row, col):
-                    if ship_over_ship_check(board, ship, orient, row, col):
+                    if not ship_over_ship_check(board, ship, orient, row, col):
                         if orient == "H":
                             for i in range(col, col + ship):
                                 board[row][i] = "X"
@@ -216,6 +216,19 @@ def place_ships(board):
                             for i in range(row, row + ship):
                                 board[i][col] = "X"
                         break
+            else:
+                place_ship = True
+                print(Txt.MAIN + f"Place the ship, it's size is {str(ship)}" +
+                      "spaces wide:")
+                orient, row, col = user_input(place_ship)
+                if ship_on_board_check(board, ship, orient, row, col):
+                    if not ship_over_ship_check(board, ship, orient, row, col):
+                        if orient == "H":
+                            for i in range(col, col + ship):
+                                board[row][i] = "X"
+                        else:
+                            for i in range(row, row + ship):
+                                board[i][col] = "X"
 
 
 def ship_on_board_check(board, ship, orient, row, col):
@@ -244,7 +257,7 @@ def ship_over_ship_check(board, ship, orient, row, col):
     """
 
 
-def user_input(place_ships):
+def user_input(place_ship):
     """
     When called prompts the user for input
     and cycles through so that errors can be avoided.
