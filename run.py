@@ -165,6 +165,13 @@ def start_game():
     """
     clear()
     title()
+    place_ships(COMPUTER_PLACE_BOARD)
+    print(Txt.MAIN + Txt.BRIGHT + "Welcome to Battleships!")
+    print(Txt.MAIN + "This is your board:")
+    display_board(USER_PLACE_BOARD)
+    print(Txt.MAIN + "Please place your ships:")
+    place_ships(USER_PLACE_BOARD)
+    new_line()
 
 
 # Main Game Functions
@@ -219,7 +226,7 @@ def place_ships(board):
             else:
                 place_ship = True
                 print(Txt.MAIN + f"Place the ship, it's size is {str(ship)}" +
-                      "spaces wide:")
+                      " spaces wide:")
                 orient, row, col = user_input(place_ship)
                 if ship_on_board_check(board, ship, orient, row, col):
                     if not ship_over_ship_check(board, ship, orient, row, col):
