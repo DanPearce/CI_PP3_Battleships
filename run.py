@@ -426,6 +426,18 @@ def move(board):
     and will also place the 'bombs'/'misses' onto the board
     Passing: board to check which board we are using.
     """
+    if board == USER_GUESS_BOARD:
+        row, col = user_input(USER_GUESS_BOARD)
+        if board[row][col] == f"{Txt.COMP}~":
+            print(Txt.ERROR + "You've already guessed there, try again!")
+            move(board)
+        elif board[row][col] == f"{Txt.COMP}X":
+            print(Txt.ERROR + "You've already guessed there, try again!")
+            move(board)
+        elif COMPUTER_PLACE_BOARD[row][col] == "X":
+            board[row][col] = f"{Txt.COMP}X"
+        else:
+            board[row][col] = f"{Txt.COMP}~"
 
 
 def init_program():
