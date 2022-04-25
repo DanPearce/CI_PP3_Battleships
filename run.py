@@ -321,6 +321,20 @@ def user_input(place_ship):
     if the user is placing ships
     or if they're guessing.
     """
+    if place_ship:
+        while True:
+            try:
+                orient = input(Txt.MAIN + "Would you like your ship to be" +
+                               "Vertical(V) or Horizontal(H)?")
+                while orient not in ("H", "V"):
+                    print(Txt.ERROR + "Incorrect input, please choose either" +
+                          "'V'(Vertical) or 'H'(Horizontal)")
+                    break
+                if orient == "H" or orient == "V":
+                    break
+            except ValueError:
+                print(Txt.ERROR + "Incorrect input, please choose either" +
+                      "'V'(Vertical) or 'H'(Horizontal)")
 
 
 def ships_hit(board):
