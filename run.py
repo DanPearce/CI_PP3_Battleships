@@ -6,6 +6,7 @@ Developed by Dan Pearce using the Python language!
 # Langauge and Script imports
 import os
 import time
+import random
 from colours import Colours as Txt
 
 # Global Variables
@@ -164,10 +165,6 @@ def start_game():
     """
     clear()
     title()
-    display_board(USER_PLACE_BOARD)
-    display_board(COMPUTER_PLACE_BOARD)
-    display_board(USER_GUESS_BOARD)
-    display_board(COMPUTER_GUESS_BOARD)
 
 
 # Main Game Functions
