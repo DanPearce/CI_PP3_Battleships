@@ -321,7 +321,7 @@ def user_input(place_ship):
     if the user is placing ships
     or if they're guessing.
     """
-    if place_ship:
+    if place_ship is True:
         while True:
             try:
                 orient = input(Txt.MAIN + "Would you like your ship to be" +
