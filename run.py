@@ -325,16 +325,29 @@ def user_input(place_ship):
         while True:
             try:
                 orient = input(Txt.MAIN + "Would you like your ship to be" +
-                               "Vertical(V) or Horizontal(H)?")
+                               "Vertical(V) or Horizontal(H)?\n")
                 while orient not in ("H", "V"):
                     print(Txt.ERROR + "Incorrect input, please choose either" +
-                          "'V'(Vertical) or 'H'(Horizontal)")
+                          "'V'(Vertical) or 'H'(Horizontal)\n")
                     break
                 if orient == "H" or orient == "V":
                     break
             except ValueError:
                 print(Txt.ERROR + "Incorrect input, please choose either" +
-                      "'V'(Vertical) or 'H'(Horizontal)")
+                      "'V'(Vertical) or 'H'(Horizontal)\n")
+        while True:
+            try:
+                row = input(Txt.MAIN + "Please enter the row you'd like to" +
+                            "place the ship (1-8):\n")
+                while row not in ("1", "2", "3", "4", "5", "6", "7", "8"):
+                    print(Txt.ERROR + "Incorrect input, please enter a" +
+                          " number between 1 & 8:\n")
+                if row in ("1", "2", "3", "4", "5", "6", "7", "8"):
+                    row = int(row) - 1
+                    break
+            except ValueError:
+                print(Txt.ERROR + "Incorrect input, please enter a" +
+                      " number between 1 & 8:\n")
 
 
 def ships_hit(board):
