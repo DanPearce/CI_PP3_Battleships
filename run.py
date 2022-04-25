@@ -404,6 +404,20 @@ def ships_hit(board):
     to determain a winner.
     Passing: board to check different boards
     """
+    hit_user = 0
+    hit_computer = 0
+    if board == USER_GUESS_BOARD:
+        for row in board:
+            for col in row:
+                if col == f"{Txt.COMP}X":
+                    hit_user += 1
+        return hit_user
+    elif board == COMPUTER_GUESS_BOARD:
+        for row in board:
+            for col in row:
+                if col == f"{Txt.USER}X":
+                    hit_computer += 1
+        return hit_computer
 
 
 def move(board):
