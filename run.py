@@ -325,7 +325,7 @@ def user_input(place_ship):
         while True:
             try:
                 orient = input(Txt.MAIN + "Would you like your ship to be" +
-                               "Vertical(V) or Horizontal(H)?\n")
+                               "Vertical(V) or Horizontal(H)?\n").upper()
                 while orient not in ("H", "V"):
                     print(Txt.ERROR + "Incorrect input, please choose either" +
                           "'V'(Vertical) or 'H'(Horizontal)\n")
@@ -352,7 +352,7 @@ def user_input(place_ship):
         while True:
             try:
                 col = input(Txt.MAIN + "Please enter the column you'd" +
-                            " like to place the ship (A-H):\n")
+                            " like to place the ship (A-H):\n").upper()
                 while col not in ("A", "B", "C", "D", "E", "F", "G", "H"):
                     print(Txt.ERROR + "Incorrect input, please enter a " +
                           "letter between A & H:\n")
@@ -382,7 +382,8 @@ def user_input(place_ship):
         while True:
             try:
                 col = input(Txt.MAIN + "Please enter the column you'd" +
-                            " like to guess the computer's ship (A-H):\n")
+                            " like to guess the computer's ship (A-H)" +
+                            ":\n").upper()
                 while col not in ("A", "B", "C", "D", "E", "F", "G", "H"):
                     print(Txt.ERROR + "Incorrect input, please enter a " +
                           "letter between A & H:\n")
