@@ -202,6 +202,20 @@ def place_ships(board):
     altered depending on the stage of the game and if
     it's the computers turn or the users.
     """
+    for ship in SHIPS:
+        while True:
+            if board == COMPUTER_PLACE_BOARD:
+                orient = random.choice(["H", "V"])
+                row, col = random.randint(0, 7), random.randint(0, 7)
+                if ship_on_board_check(board, ship, orient, row, col):
+                    if ship_over_ship_check(board, ship, orient, row, col):
+                        if orient == "H":
+                            for i in range(col, col + ship):
+                                board[row][i] = "X"
+                        else:
+                            for i in range(row, row + ship):
+                                board[i][col] = "X"
+                        break
 
 
 def ship_on_board_check(board, ship, orient, row, col):
