@@ -379,6 +379,21 @@ def user_input(place_ship):
             except ValueError:
                 print(Txt.ERROR + "Incorrect input, please enter a" +
                       " number between 1 & 8:\n")
+        while True:
+            try:
+                col = input(Txt.MAIN + "Please enter the column you'd" +
+                            " like to guess the computer's ship (A-H):\n")
+                while col not in ("A", "B", "C", "D", "E", "F", "G", "H"):
+                    print(Txt.ERROR + "Incorrect input, please enter a " +
+                          "letter between A & H:\n")
+                    break
+                if col in ("A", "B", "C", "D", "E", "F", "G", "H"):
+                    col = LETTER_NUMBER[col]
+                    break
+            except ValueError:
+                print(Txt.ERROR + "Incorrect input, please enter a " +
+                      "letter between A & H:\n")
+        return row, col
 
 
 def ships_hit(board):
