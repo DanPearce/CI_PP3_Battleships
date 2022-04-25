@@ -165,6 +165,9 @@ def start_game():
     clear()
     title()
     display_board(USER_PLACE_BOARD)
+    display_board(COMPUTER_PLACE_BOARD)
+    display_board(USER_GUESS_BOARD)
+    display_board(COMPUTER_GUESS_BOARD)
 
 
 # Main Game Functions
@@ -183,6 +186,13 @@ def display_board(board):
         row_num = 1
         for row in board:
             print(Txt.USER + "%d|%s" % (row_num, f"{Txt.USER}|".join(row)))
+            row_num += 1
+    else:
+        print(Txt.COMP + "  A B C D E F G H")
+        print(Txt.COMP + "  _ _ _ _ _ _ _ _")
+        row_num = 1
+        for row in board:
+            print(Txt.COMP + "%d|%s" % (row_num, f"{Txt.COMP}|".join(row)))
             row_num += 1
 
 
