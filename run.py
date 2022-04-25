@@ -342,12 +342,27 @@ def user_input(place_ship):
                 while row not in ("1", "2", "3", "4", "5", "6", "7", "8"):
                     print(Txt.ERROR + "Incorrect input, please enter a" +
                           " number between 1 & 8:\n")
+                    break
                 if row in ("1", "2", "3", "4", "5", "6", "7", "8"):
                     row = int(row) - 1
                     break
             except ValueError:
                 print(Txt.ERROR + "Incorrect input, please enter a" +
                       " number between 1 & 8:\n")
+        while True:
+            try:
+                col = input(Txt.MAIN + "Please enter the column you'd" +
+                            " like to place the ship (A-H):\n")
+                while col not in ("A", "B", "C", "D", "E", "F", "G", "H"):
+                    print(Txt.ERROR + "Incorrect input, please enter a " +
+                          "letter between A & H:\n")
+                    break
+                if col in ("A", "B", "C", "D", "E", "F", "G", "H"):
+                    col = LETTER_NUMBER[col]
+                    break
+            except ValueError:
+                print(Txt.ERROR + "Incorrect input, please enter a " +
+                      "letter between A & H:\n")
 
 
 def ships_hit(board):
