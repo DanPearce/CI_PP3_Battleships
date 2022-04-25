@@ -287,6 +287,16 @@ def ship_over_ship_check(board, ship, orient, row, col):
     - orient: to check the orientation for both types of r/c.
     - row/col: to determain if we're checking a row or column.
     """
+    if board == COMPUTER_PLACE_BOARD:
+        if orient == "H":
+            for i in range(col, col + ship):
+                if board[row][i] == "X":
+                    return True
+        else:
+            for i in range(row, row + ship):
+                if board[i][col] == "X":
+                    return True
+        return False
 
 
 def user_input(place_ship):
