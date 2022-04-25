@@ -217,6 +217,27 @@ def start_game():
             title()
             print(Txt.ERROR + "Sorry, you have lost to the machine!...")
             new_line()
+            game_options = Txt.MAIN + "1) Return to game menu\n2) Quit\n\n"
+            user_option = input(game_options)
+            while user_option not in ("1", "2"):
+                print(Txt.MAIN + "Please choose an option")
+                user_option = input(game_options)
+            if user_option == "1":
+                clear()
+                title()
+                time.sleep(1.5)
+                game_menu()
+            elif user_option == "2":
+                new_line()
+                print(Txt.MAIN + Txt.BRIGHT + "Thanks for playing!")
+                time.sleep(1.5)
+                new_line()
+                title()
+                time.sleep(1.5)
+                print(Txt.MAIN + Txt.BRIGHT + "Better luck next time!")
+                new_line()
+                time.sleep(1.5)
+                quit()
 
 
 # Main Game Functions
