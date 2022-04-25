@@ -10,14 +10,14 @@ from colours import Colours as Txt
 
 # Global Variables
 LETTER_NUMBER = {
-    A: 0,
-    B: 1,
-    C: 2,
-    D: 3,
-    E: 4,
-    F: 5,
-    G: 6,
-    H: 7
+    "A": 0,
+    "B": 1,
+    "C": 2,
+    "D": 3,
+    "E": 4,
+    "F": 5,
+    "G": 6,
+    "H": 7
 }
 SHIP = [1, 2, 3, 4, 5]
 USER_PLACE_BOARD = [[" "] * 8 for x in range(8)]
