@@ -19,7 +19,7 @@ LETTER_NUMBER = {
     "G": 6,
     "H": 7
 }
-SHIP = [1, 2, 3, 4, 5]
+SHIPS = [1, 2, 3, 4, 5]
 USER_PLACE_BOARD = [[" "] * 8 for x in range(8)]
 USER_GUESS_BOARD = [[" "] * 8 for x in range(8)]
 COMPUTER_PLACE_BOARD = [[" "] * 8 for x in range(8)]
@@ -177,3 +177,79 @@ def init_program():
 # Initiates the program upon loading - Also Script Guard
 if __name__ == "__main__":
     init_program()
+
+
+# Main Game Functions
+
+
+def display_board(board):
+    """
+    Creates and displays a visual board for the user
+    to see as they progress throughout the game
+    Passing: board so that the correct board can be
+    displayed.
+    """
+
+
+def place_ships(board):
+    """
+    When called this function will place the ships
+    in either the Computer's boards or the will prompt
+    the user for input to place onto their boards
+    Passing: board so that the correct board can be
+    altered depending on the stage of the game and if
+    it's the computers turn or the users.
+    """
+
+
+def ship_on_board_check(board, ship, orient, row, col):
+    """
+    Checks that the current ship being placed is on the
+    board and doesn't 'fall off'. Meaning issues would
+    arise with scores.
+    Passing:
+    - board: to check who's board is in use, display errors
+    - ship: so that the ships size can be measured.
+    - orient: to check the orientation for both types of r/c.
+    - row/col: to check the position agaisnt the ship size.
+    """
+
+
+def ship_over_ship_check(board, ship, orient, row, col):
+    """
+    Checks that the current ship being placed is not being
+    placed over another ship. Preventing issues with scores.
+    Passing:
+    - board: to check who's board is in use, display errors
+    - ship: to allow us to measure the size of the ship
+    against the row/column.
+    - orient: to check the orientation for both types of r/c.
+    - row/col: to determain if we're checking a row or column.
+    """
+
+
+def user_input(place_ships):
+    """
+    When called prompts the user for input
+    and cycles through so that errors can be avoided.
+    Passing: place_ships in order to determain
+    if the user is placing ships
+    or if they're guessing.
+    """
+
+
+def ships_hit(board):
+    """
+    Will check the players and computers boards
+    for the ammount of "X"/"Hits" allowing us
+    to determain a winner.
+    Passing: board to check different boards
+    """
+
+
+def move(board):
+    """
+    This function acts as the 'move'/'turn' for the game
+    and will also place the 'bombs'/'misses' onto the board
+    Passing: board to check which board we are using.
+    """
