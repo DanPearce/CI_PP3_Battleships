@@ -80,7 +80,7 @@ def new_line():
     Prints a line, visually matching the game's title colours
     Creates more readability in the console
     """
-    print((f"{Txt.USER}_ " + f"{Txt.COMP}_ ") * 26 + "\n")
+    print((f"{Txt.USER}_ " + f"{Txt.COMP}_ ") * 28 + "\n")
 
 
 def game_menu():
@@ -179,9 +179,17 @@ def start_game():
             move(USER_GUESS_BOARD)
             break
         if ships_hit(USER_GUESS_BOARD) == 15:
+            new_line()
+            time.sleep(1.5)
+            new_line()
+            time.sleep(1.5)
+            print(Txt.USER + "Congratulations, you have won!")
+            time.sleep(1)
+            new_line()
+            new_line()
+            time.sleep(1.5)
             clear()
             title()
-            print(Txt.USER + "Congratulations, you have won!")
             new_line()
             game_options = Txt.MAIN + "1) Return to game menu\n2) Quit\n\n"
             user_option = input(game_options)
@@ -213,9 +221,17 @@ def start_game():
         display_board(COMPUTER_GUESS_BOARD)
         new_line()
         if ships_hit(COMPUTER_GUESS_BOARD) == 15:
+            new_line()
+            time.sleep(1.5)
+            new_line()
+            time.sleep(1.5)
+            print(Txt.ERROR + "Sorry, you have lost to the machine!")
+            time.sleep(1)
+            new_line()
+            new_line()
+            time.sleep(1.5)
             clear()
             title()
-            print(Txt.ERROR + "Sorry, you have lost to the machine!...")
             new_line()
             game_options = Txt.MAIN + "1) Return to game menu\n2) Quit\n\n"
             user_option = input(game_options)
@@ -291,8 +307,8 @@ def place_ships(board):
                         break
             else:
                 place_ship = True
-                print(Txt.MAIN + f"Place the ship, it's size is {str(ship)}" +
-                      " spaces wide:")
+                print(Txt.MAIN + "Place the ship, it's size is" +
+                      f" {Txt.MAIN + Txt.BRIGHT + str(ship)} spaces wide:")
                 orient, row, col = user_input(place_ship)
                 if ship_on_board_check(board, ship, orient, row, col):
                     if not ship_over_ship_check(board, ship, orient, row, col):
@@ -335,14 +351,14 @@ def ship_on_board_check(board, ship, orient, row, col):
     else:
         if orient == "H":
             if col + ship > 8:
-                print(Txt.ERROR + "Oops! The ship cannot go off the board!" +
+                print(Txt.ERROR + "Oops! The ship cannot go off the board!\n" +
                       "Please try again!")
                 return False
             else:
                 return True
         else:
             if row + ship > 8:
-                print(Txt.ERROR + "Oops! The ship cannot go off the board!" +
+                print(Txt.ERROR + "Oops! The ship cannot go off the board!\n" +
                       "Please try again!")
                 return False
             else:
@@ -375,13 +391,13 @@ def ship_over_ship_check(board, ship, orient, row, col):
             for i in range(col, col + ship):
                 if board[row][i] == "X":
                     print(Txt.ERROR + "Try again! The ship cannot go over" +
-                          "another ship!")
+                          " another ship!")
                     return True
         else:
             for i in range(row, row + ship):
                 if board[i][col] == "X":
                     print(Txt.ERROR + "Try again! The ship cannot go over" +
-                          "another ship!")
+                          " another ship!")
                     return True
         return False
 
@@ -398,20 +414,20 @@ def user_input(place_ship):
         while True:
             try:
                 orient = input(Txt.MAIN + "Would you like your ship to be" +
-                               "Vertical(V) or Horizontal(H)?\n").upper()
+                               " Vertical(V) or Horizontal(H)?\n").upper()
                 while orient not in ("H", "V"):
                     print(Txt.ERROR + "Incorrect input, please choose either" +
-                          "'V'(Vertical) or 'H'(Horizontal)\n")
+                          " 'V'(Vertical) or 'H'(Horizontal)\n")
                     break
                 if orient == "H" or orient == "V":
                     break
             except ValueError:
                 print(Txt.ERROR + "Incorrect input, please choose either" +
-                      "'V'(Vertical) or 'H'(Horizontal)\n")
+                      " 'V'(Vertical) or 'H'(Horizontal)\n")
         while True:
             try:
                 row = input(Txt.MAIN + "Please enter the row you'd like to" +
-                            "place the ship (1-8):\n")
+                            " place the ship (1-8):\n")
                 while row not in ("1", "2", "3", "4", "5", "6", "7", "8"):
                     print(Txt.ERROR + "Incorrect input, please enter a" +
                           " number between 1 & 8:\n")
