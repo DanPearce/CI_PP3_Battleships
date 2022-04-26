@@ -230,7 +230,8 @@ def start_game():
             move(COMPUTER_GUESS_BOARD)
             break
         clear()
-        title()
+        mid_game_title()
+        new_line()
         print(Txt.MAIN + "Computer's guessing board:\n")
         display_board(COMPUTER_GUESS_BOARD)
         new_line()
@@ -513,6 +514,14 @@ def user_input(place_ship):
                 row = input(Txt.MAIN + "Please enter the row you'd like to" +
                             " guess the computer's ship (1-8):\n")
                 while row not in ("1", "2", "3", "4", "5", "6", "7", "8"):
+                    clear()
+                    mid_game_title()
+                    new_line()
+                    print(Txt.MAIN + "Computer's guessing board:\n")
+                    display_board(COMPUTER_GUESS_BOARD)
+                    new_line()
+                    print(Txt.MAIN + "Your guessing board:\n")
+                    display_board(USER_GUESS_BOARD)
                     print(Txt.ERROR + "Incorrect input, please enter a" +
                           " number between 1 & 8:\n")
                     break
@@ -520,6 +529,14 @@ def user_input(place_ship):
                     row = int(row) - 1
                     break
             except ValueError:
+                clear()
+                mid_game_title()
+                new_line()
+                print(Txt.MAIN + "Computer's guessing board:\n")
+                display_board(COMPUTER_GUESS_BOARD)
+                new_line()
+                print(Txt.MAIN + "Your guessing board:\n")
+                display_board(USER_GUESS_BOARD)
                 print(Txt.ERROR + "Incorrect input, please enter a" +
                       " number between 1 & 8:\n")
         while True:
@@ -528,6 +545,14 @@ def user_input(place_ship):
                             " like to guess the computer's ship (A-H)" +
                             ":\n").upper()
                 while col not in ("A", "B", "C", "D", "E", "F", "G", "H"):
+                    clear()
+                    mid_game_title()
+                    new_line()
+                    print(Txt.MAIN + "Computer's guessing board:\n")
+                    display_board(COMPUTER_GUESS_BOARD)
+                    new_line()
+                    print(Txt.MAIN + "Your guessing board:\n")
+                    display_board(USER_GUESS_BOARD)
                     print(Txt.ERROR + "Incorrect input, please enter a " +
                           "letter between A & H:\n")
                     break
@@ -535,6 +560,14 @@ def user_input(place_ship):
                     col = LETTER_NUMBER[col]
                     break
             except ValueError:
+                clear()
+                mid_game_title()
+                new_line()
+                print(Txt.MAIN + "Computer's guessing board:\n")
+                display_board(COMPUTER_GUESS_BOARD)
+                new_line()
+                print(Txt.MAIN + "Your guessing board:\n")
+                display_board(USER_GUESS_BOARD)
                 print(Txt.ERROR + "Incorrect input, please enter a " +
                       "letter between A & H:\n")
         return row, col
@@ -572,10 +605,26 @@ def move(board):
     if board == USER_GUESS_BOARD:
         row, col = user_input(USER_GUESS_BOARD)
         if board[row][col] == f"{Txt.COMP}~":
-            print(Txt.ERROR + "You've already guessed there, try again!")
+            clear()
+            mid_game_title()
+            new_line()
+            print(Txt.MAIN + "Computer's guessing board:\n")
+            display_board(COMPUTER_GUESS_BOARD)
+            new_line()
+            print(Txt.MAIN + "Your guessing board:\n")
+            display_board(USER_GUESS_BOARD)
+            print(Txt.ERROR + "You've already guessed there, try again!\n")
             move(board)
         elif board[row][col] == f"{Txt.COMP}X":
-            print(Txt.ERROR + "You've already guessed there, try again!")
+            clear()
+            mid_game_title()
+            new_line()
+            print(Txt.MAIN + "Computer's guessing board:\n")
+            display_board(COMPUTER_GUESS_BOARD)
+            new_line()
+            print(Txt.MAIN + "Your guessing board:\n")
+            display_board(USER_GUESS_BOARD)
+            print(Txt.ERROR + "You've already guessed there, try again!\n")
             move(board)
         elif COMPUTER_PLACE_BOARD[row][col] == "X":
             board[row][col] = f"{Txt.COMP}X"
