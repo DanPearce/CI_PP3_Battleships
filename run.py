@@ -365,6 +365,10 @@ def ship_on_board_check(board, ship, orient, row, col):
     else:
         if orient == "H":
             if col + ship > 8:
+                clear()
+                mid_game_title()
+                new_line()
+                display_board(USER_PLACE_BOARD)
                 print(Txt.ERROR + "Oops! The ship cannot go off the board!\n" +
                       "Please try again!")
                 return False
@@ -372,6 +376,10 @@ def ship_on_board_check(board, ship, orient, row, col):
                 return True
         else:
             if row + ship > 8:
+                clear()
+                mid_game_title()
+                new_line()
+                display_board(USER_PLACE_BOARD)
                 print(Txt.ERROR + "Oops! The ship cannot go off the board!\n" +
                       "Please try again!")
                 return False
@@ -404,12 +412,20 @@ def ship_over_ship_check(board, ship, orient, row, col):
         if orient == "H":
             for i in range(col, col + ship):
                 if board[row][i] == "X":
+                    clear()
+                    mid_game_title()
+                    new_line()
+                    display_board(USER_PLACE_BOARD)
                     print(Txt.ERROR + "Try again! The ship cannot go over" +
                           " another ship!")
                     return True
         else:
             for i in range(row, row + ship):
                 if board[i][col] == "X":
+                    clear()
+                    mid_game_title()
+                    new_line()
+                    display_board(USER_PLACE_BOARD)
                     print(Txt.ERROR + "Try again! The ship cannot go over" +
                           " another ship!")
                     return True
@@ -430,12 +446,20 @@ def user_input(place_ship):
                 orient = input(Txt.MAIN + "Would you like your ship to be" +
                                " Vertical(V) or Horizontal(H)?\n").upper()
                 while orient not in ("H", "V"):
+                    clear()
+                    mid_game_title()
+                    new_line()
+                    display_board(USER_PLACE_BOARD)
                     print(Txt.ERROR + "Incorrect input, please choose either" +
                           " 'V'(Vertical) or 'H'(Horizontal)\n")
                     break
                 if orient == "H" or orient == "V":
                     break
             except ValueError:
+                clear()
+                mid_game_title()
+                new_line()
+                display_board(USER_PLACE_BOARD)
                 print(Txt.ERROR + "Incorrect input, please choose either" +
                       " 'V'(Vertical) or 'H'(Horizontal)\n")
         while True:
@@ -443,6 +467,10 @@ def user_input(place_ship):
                 row = input(Txt.MAIN + "Please enter the row you'd like to" +
                             " place the ship (1-8):\n")
                 while row not in ("1", "2", "3", "4", "5", "6", "7", "8"):
+                    clear()
+                    mid_game_title()
+                    new_line()
+                    display_board(USER_PLACE_BOARD)
                     print(Txt.ERROR + "Incorrect input, please enter a" +
                           " number between 1 & 8:\n")
                     break
@@ -450,6 +478,10 @@ def user_input(place_ship):
                     row = int(row) - 1
                     break
             except ValueError:
+                clear()
+                mid_game_title()
+                new_line()
+                display_board(USER_PLACE_BOARD)
                 print(Txt.ERROR + "Incorrect input, please enter a" +
                       " number between 1 & 8:\n")
         while True:
@@ -457,6 +489,10 @@ def user_input(place_ship):
                 col = input(Txt.MAIN + "Please enter the column you'd" +
                             " like to place the ship (A-H):\n").upper()
                 while col not in ("A", "B", "C", "D", "E", "F", "G", "H"):
+                    clear()
+                    mid_game_title()
+                    new_line()
+                    display_board(USER_PLACE_BOARD)
                     print(Txt.ERROR + "Incorrect input, please enter a " +
                           "letter between A & H:\n")
                     break
@@ -464,6 +500,10 @@ def user_input(place_ship):
                     col = LETTER_NUMBER[col]
                     break
             except ValueError:
+                clear()
+                mid_game_title()
+                new_line()
+                display_board(USER_PLACE_BOARD)
                 print(Txt.ERROR + "Incorrect input, please enter a " +
                       "letter between A & H:\n")
         return orient, row, col
