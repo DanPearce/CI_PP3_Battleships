@@ -68,6 +68,20 @@ def title():
     new_line()
 
 
+def mid_game_title():
+    """
+    Displays the games title at the top of the game throughout the
+    course of the game.
+    """
+    print(f"{Txt.USER}B " + f"{Txt.COMP}A " + f"{Txt.USER}T " +
+          f"{Txt.COMP}T " + f"{Txt.USER}L " + f"{Txt.COMP}E " +
+          f"{Txt.USER}S " + f"{Txt.COMP}H " + f"{Txt.USER}I " +
+          f"{Txt.COMP}P " + f"{Txt.USER}S")
+    print(" ")
+    print(Txt.MAIN + Txt.BRIGHT + "Developed by: Dan Pearce -  https://" +
+          "danpearce.software/")
+
+
 def clear():
     """
     Clears the console to be more visually appealing to the user
@@ -319,7 +333,7 @@ def place_ships(board):
                             for i in range(row, row + ship):
                                 board[i][col] = "X"
                         clear()
-                        title()
+                        mid_game_title()
                         new_line()
                         print(Txt.USER + "Your board:")
                         display_board(USER_PLACE_BOARD)
