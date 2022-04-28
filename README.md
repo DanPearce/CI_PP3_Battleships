@@ -172,7 +172,7 @@ For the structure and logic of the application I have created a flowchart which 
 The colours within the game itself has been provided using the Colorama library for Python. The library provides us with a set of basic colours; of which I selected a few and created a class in a unique python file so they could be accessed from the main game easily.
 
 <details><summary>Terminal Colours</summary>
-<img src="docs/images/coloursterm.png">
+<img src="docs/images/colours-term.png">
 </details>
 
 I decided to opt for the colours as they, to me, stood out as the classic game colours. Red vs Blue for user vs computer; a neutral cyan colour to indicate menus and game controls and classic black and white for usual terminal look.
