@@ -286,10 +286,29 @@ The social media links can be found on the live version of the Heroku app, allow
 ## Technologies
 
 ### Languages
+- [Python](https://www.python.org/)
+- [HTML](https://en.wikipedia.org/wiki/HTML5)
+- [CSS](https://en.wikipedia.org/wiki/CSS)
 
 ### Libraries
 
+#### Python Built-In Libraries
+- random
+- os 
+- time
+
+#### Third Party Libraries
+- [Colorama](https://pypi.org/project/colorama/)
+
 ### Frameworks and Other Technologies
+- [GitHub](https://github.com/)
+- [GitPod](https://www.gitpod.io/)
+- [Heroku](https://www.heroku.com)
+- [Font Awesome](https://fontawesome.com/)
+- [Diagrams.net](https://app.diagrams.net/)
+- [Google Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools)
+- [Google Fonts](https://fonts.google.com/)
+- [Flaticon](https://www.flaticon.com/)
 
 ## Validation and Testing
 
