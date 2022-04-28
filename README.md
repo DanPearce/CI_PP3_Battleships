@@ -36,3 +36,52 @@ The application has been uploaded to Heroku for convience for the user to play o
 9. [Credits](#credits)
 10. [Acknowledgements](#acknowledgements)
 
+## Application Goals and Consumer Experience
+
+### Consumer Goals
+
+### Owner Goals
+
+### Target Audience
+
+### Consumer Expectations
+
+### Consumer Manual
+
+## User Stories
+
+### User
+
+### Owner
+
+## Design
+
+### Structure
+
+### Flowchart
+
+### Colour
+
+## Main Features
+
+## Technologies
+
+### Languages
+
+### Libraries
+
+### Frameworks and Other Technologies
+
+## Validation and Testing
+
+### Python PEP8 Testing
+
+### User Story Testing
+
+## Bugs and Errors
+
+## Deployment
+
+## Credits
+
+## Acknowledgements
