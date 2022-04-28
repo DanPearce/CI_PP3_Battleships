@@ -313,8 +313,81 @@ The social media links can be found on the live version of the Heroku app, allow
 ## Validation and Testing
 
 ### Python PEP8 Testing
+The [PEP8 Validation Service](http://pep8online.com/) was used to check the Python Code against guidlines and best practices. All code has been returned with no errors.
+
+<details><summary></summary>
+<img src="docs/images/pep8-colours-validation.png">
+</details>
+<details><summary></summary>
+<img src="docs/images/pep8-run-validation.png">
+</details>
 
 ### User Story Testing
+
+| **User Story 1** | **User Action** | **Desired Outcome** | **Actual Outcome** |
+|------------------|-----------------|---------------------|--------------------|
+| w | x | y | z | 
+| <details><summary></summary><img src="docs/images/user-story-testing/battleships-.png"></details> | | | |
+
+| **User Story 2** | **User Action** | **Desired Outcome** | **Actual Outcome** |
+|------------------|-----------------|---------------------|--------------------|
+| w | x | y | z | 
+| <details><summary></summary><img src="docs/images/user-story-testing/battleships-.png"></details> | | | |
+
+| **User Story 3** | **User Action** | **Desired Outcome** | **Actual Outcome** |
+|------------------|-----------------|---------------------|--------------------|
+| w | x | y | z | 
+| <details><summary></summary><img src="docs/images/user-story-testing/battleships-.png"></details> | | | |
+
+| **User Story 4** | **User Action** | **Desired Outcome** | **Actual Outcome** |
+|------------------|-----------------|---------------------|--------------------|
+| w | x | y | z | 
+| <details><summary></summary><img src="docs/images/user-story-testing/battleships-.png"></details> | | | |
+
+| **User Story 5** | **User Action** | **Desired Outcome** | **Actual Outcome** |
+|------------------|-----------------|---------------------|--------------------|
+| w | x | y | z | 
+| <details><summary></summary><img src="docs/images/user-story-testing/battleships-.png"></details> | | | |
+
+| **User Story 6** | **User Action** | **Desired Outcome** | **Actual Outcome** |
+|------------------|-----------------|---------------------|--------------------|
+| w | x | y | z | 
+| <details><summary></summary><img src="docs/images/user-story-testing/battleships-.png"></details> | | | |
+
+| **User Story 7** | **User Action** | **Desired Outcome** | **Actual Outcome** |
+|------------------|-----------------|---------------------|--------------------|
+| w | x | y | z | 
+| <details><summary></summary><img src="docs/images/user-story-testing/battleships-.png"></details> | | | |
+
+| **User Story 8** | **User Action** | **Desired Outcome** | **Actual Outcome** |
+|------------------|-----------------|---------------------|--------------------|
+| w | x | y | z | 
+| <details><summary></summary><img src="docs/images/user-story-testing/battleships-.png"></details> | | | |
+
+| **User Story 9** | **User Action** | **Desired Outcome** | **Actual Outcome** |
+|------------------|-----------------|---------------------|--------------------|
+| w | x | y | z | 
+| <details><summary></summary><img src="docs/images/user-story-testing/battleships-.png"></details> | | | |
+
+| **User Story 10** | **User Action** | **Desired Outcome** | **Actual Outcome** |
+|------------------|-----------------|---------------------|--------------------|
+| w | x | y | z | 
+| <details><summary></summary><img src="docs/images/user-story-testing/battleships-.png"></details> | | | |
+
+| **User Story 11** | **User Action** | **Desired Outcome** | **Actual Outcome** |
+|------------------|-----------------|---------------------|--------------------|
+| w | x | y | z | 
+| <details><summary></summary><img src="docs/images/user-story-testing/battleships-.png"></details> | | | |
+
+| **User Story 12** | **User Action** | **Desired Outcome** | **Actual Outcome** |
+|------------------|-----------------|---------------------|--------------------|
+| w | x | y | z | 
+| <details><summary></summary><img src="docs/images/user-story-testing/battleships-.png"></details> | | | |
+
+| **User Story 13** | **User Action** | **Desired Outcome** | **Actual Outcome** |
+|------------------|-----------------|---------------------|--------------------|
+| w | x | y | z | 
+| <details><summary></summary><img src="docs/images/user-story-testing/battleships-.png"></details> | | | |
 
 ## Bugs and Errors
 
