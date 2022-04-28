@@ -211,6 +211,7 @@ def start_game():
                 print(Txt.MAIN + "Please choose an option")
                 user_option = input(game_options)
             if user_option == "1":
+                reset_boards()
                 clear()
                 title()
                 time.sleep(1.5)
@@ -256,6 +257,7 @@ def start_game():
                 print(Txt.MAIN + "Please choose an option")
                 user_option = input(game_options)
             if user_option == "1":
+                reset_boards()
                 clear()
                 title()
                 time.sleep(1.5)
@@ -644,6 +646,20 @@ def move(board):
             board[row][col] = f"{Txt.USER}X"
         else:
             board[row][col] = f"{Txt.USER}~"
+
+
+def reset_boards():
+    """
+    Reset the game boards if the user decides to play again.
+    """
+    global USER_GUESS_BOARD
+    global USER_PLACE_BOARD
+    global COMPUTER_GUESS_BOARD
+    global COMPUTER_PLACE_BOARD
+    USER_PLACE_BOARD = [[" "] * 8 for x in range(8)]
+    USER_GUESS_BOARD = [[" "] * 8 for x in range(8)]
+    COMPUTER_PLACE_BOARD = [[" "] * 8 for x in range(8)]
+    COMPUTER_GUESS_BOARD = [[" "] * 8 for x in range(8)]
 
 
 def init_program():
