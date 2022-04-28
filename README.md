@@ -133,8 +133,21 @@ Upon deciding to quit, the consumer is presented with a visual goodbye screen an
 ## User Stories
 
 ### User
+1. As a user, I want to be able to play the game Battleships.
+2. As a user, I want to easily navigate the main menu.
+3. As a user, I want to read the rules of the game easily.
+4. As a user, I want to be notified of any input errors throughout the entire game.
+5. As a user, I want to have the option to play the game again without having to re-load the game.
+6. As a user, I want to be notified if I have won or lost.
+7. As a user, I want play a different game each time against the computer.
 
 ### Owner
+8. As an owner, I want to provide the user with an colourful and interactive game that they can play.
+9. As an owner, I want to provide the user with easy to navigate menu and prompts throughout the game.
+10. As an owner, I want to provide the user with visual feedback in case of incorrect input.
+11. As an owner, I want to provide the user with a different experience each time they play the game.
+12. As an owner, I want the user to made aware if they have won/lost, and to allow them to quit the game.
+13. As an owner, I want the user to be able to access my social media if they had any questions.
 
 ## Design
 
