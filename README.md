@@ -36,7 +36,7 @@ The application has been uploaded to Heroku for convience for the user to play o
 9. [Credits](#credits)
 10. [Acknowledgements](#acknowledgements)
 
-## Application Goals and user Experience
+## Application Goals and User Experience
 
 ### User Goals
 - Play a fun and interactive version of Battleships.
@@ -144,7 +144,7 @@ Upon deciding to quit, the user is presented with a visual goodbye screen and th
 ### Owner
 8. As an owner, I want to provide the user with an colourful and interactive game that they can play.
 9. As an owner, I want to provide the user with easy to navigate menu and prompts throughout the game.
-10. As an owner, I want to provide the user with visual feedback in case of incorrect input.
+10. As an owner, I want to provide the user with visual feedback throughout the game.
 11. As an owner, I want to provide the user with a different experience each time they play the game.
 12. As an owner, I want the user to made aware if they have won/lost, and to allow them to quit the game.
 13. As an owner, I want the user to be able to access my social media if they had any questions.
@@ -187,6 +187,101 @@ The colours I decided for the background of the game when viewed on the deployed
 The colours are a simple fade of the colours used in the game, but feature a more vivid variation. I think the colours used really help the game to pop. 
 
 ## Main Features
+
+### Title & Main Menu
+The title and the main menu is the opener to the game and displays to the user using visually pleasing colours and simple commands to allow the user to know exactly what to do.
+
+The title provides the user with the game's title using ASCII Art, and the game menu allows the user to choose some options to load into the game.
+
+- User Stories: 1, 2, 8, 9
+
+<details><summary>Heroku Screenshot</summary>
+<img src="docs/images/features/battleships-heroku-small.png">
+</details>
+<details><summary>Title Screenshot</summary>
+<img src="docs/images/features/battleships-title.png">
+</details>
+
+### Game Rules
+The game rules are displayed to the user using time signals to allow the user to read them step by step. They are also displayed using colour to make it stand out to the user.
+
+- User Stories: 3, 8, 9 
+
+<details><summary>Rules Screenshot</summary>
+<img src="docs/images/features/battleships-rules.png">
+</details>
+
+### Placing Board
+The ability to place ships onto a board is a key feature to the game as this allows the user to viually see their ships on the board - and allows them to place them in any straticgic manor they wish.
+
+- User Stories: 1, 8, 10
+
+<details><summary>Start Screenshot</summary>
+<img src="docs/images/features/battleships-start-game.png">
+</details>
+<details><summary>Placing Screenshot</summary>
+<img src="docs/images/features/battleships-place.png">
+</details>
+
+### Guessing Board
+The ability to guess the opponants ships is another key feature to the game, allowing us to see visually if we have made a hit or a miss. This also allows us to see a real time board of both the user and the computer to see how likely we are to win!
+
+- User Stories: 1, 8, 10
+
+<details><summary>Placing Finished Screenshot</summary>
+<img src="docs/images/features/battleships-finish-place.png">
+</details>
+<details><summary>Mid-Game Screenshot</summary>
+<img src="docs/images/features/battleships-game-computer-board.png">
+</details>
+
+### Computer
+The use of the computer as an opponant allows for us to create a unqiue game experience each time, this is because the computer will randomly place it's ships and also randomly select too! So every game is different!
+
+- User Stories: 7, 11
+
+<details><summary>Computer Guess Screenshot</summary>
+<img src="docs/images/features/battleships-mid-game.png">
+</details>
+
+### Input Errors
+The game has consistant visual feedback which will display to the user if there is ever a circumstance of input error. This provides the user a warning and details to them how to solve the issue and continue with the game.
+
+- User Stories: 4, 9, 10
+
+<details><summary>H/V Screenshot</summary>
+<img src="docs/images/features/battleships-input-vert-hori.png">
+</details>
+<details><summary>Number Screenshot</summary>
+<img src="docs/images/features/battleships-input-numbers.png">
+</details>
+<details><summary>Letter Screenshot</summary>
+<img src="docs/images/features/battleships-input-letters.png">
+</details>
+
+### End Game
+The end game features the ability to tell the user if they have won or lost the game! Immediatly after this the user as asked if they would like to play again - which will reset the game and its boards - or to quit the game.
+
+- User Stories: 5, 6, 12
+
+<details><summary>End Game Quit Screenshot</summary>
+<img src="docs/images/features/battleships-end.png">
+</details>
+<details><summary>End Win Screenshot</summary>
+<img src="docs/images/features/battleships-win.png">
+</details>
+<details><summary>End Lose Screenshot</summary>
+<img src="docs/images/features/battleships-lose.png">
+</details>
+
+### Socials
+The social media links can be found on the live version of the Heroku app, allowing users to get in touch.
+
+- User Stories: 13
+
+<details><summary>Social Screenshot</summary>
+<img src="docs/images/features/battleships-socials.png">
+</details>
 
 ## Technologies
 
