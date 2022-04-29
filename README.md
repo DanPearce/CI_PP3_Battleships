@@ -326,68 +326,68 @@ The [PEP8 Validation Service](http://pep8online.com/) was used to check the Pyth
 
 | **User Story 1** | **User Action** | **Desired Outcome** | **Actual Outcome** |
 |------------------|-----------------|---------------------|--------------------|
-| w | x | y | z | 
-| <details><summary></summary><img src="docs/images/user-story-testing/battleships-.png"></details> | | | |
+| As a user, I want to be able to play the game Battleships. | Select play from the menu options | The game of Battleships to start. | Works as intended. | 
+| <details><summary></summary><img src="docs/images/user-story-testing/battleships-ust-1.png"></details> | | | |
 
 | **User Story 2** | **User Action** | **Desired Outcome** | **Actual Outcome** |
 |------------------|-----------------|---------------------|--------------------|
-| w | x | y | z | 
-| <details><summary></summary><img src="docs/images/user-story-testing/battleships-.png"></details> | | | |
+| As a user, I want to easily navigate the main menu. | User to choose an option from the main menu, and examine its contents | The user is presented with a couple of options in the main menu which they can choose from. | Works as intended. | 
+| <details><summary></summary><img src="docs/images/user-story-testing/battleships-ust-2.png"></details> | | | |
 
 | **User Story 3** | **User Action** | **Desired Outcome** | **Actual Outcome** |
 |------------------|-----------------|---------------------|--------------------|
-| w | x | y | z | 
-| <details><summary></summary><img src="docs/images/user-story-testing/battleships-.png"></details> | | | |
+| As a user, I want to read the rules of the game easily. | User selects the 'View the rules' option from the main menu | The user is displayed the rules of the game. | Works as intended. | 
+| <details><summary></summary><img src="docs/images/user-story-testing/battleships-ust-3-a.png"><img src="docs/images/user-story-testing/battleships-ust-3-b.png"></details> | | | |
 
 | **User Story 4** | **User Action** | **Desired Outcome** | **Actual Outcome** |
 |------------------|-----------------|---------------------|--------------------|
-| w | x | y | z | 
-| <details><summary></summary><img src="docs/images/user-story-testing/battleships-.png"></details> | | | |
+| As a user, I want to be notified of any input errors throughout the entire game. | Incorrect user input | The user is presented with an error message in red when they attempt to input something that will lead to an error. | Works as intended. | 
+| <details><summary></summary><img src="docs/images/user-story-testing/battleships-ust-4-a.png"><img src="docs/images/user-story-testing/battleships-ust-4-b.png"><img src="docs/images/user-story-testing/battleships-ust-4-c.png"></details> | | | |
 
 | **User Story 5** | **User Action** | **Desired Outcome** | **Actual Outcome** |
 |------------------|-----------------|---------------------|--------------------|
-| w | x | y | z | 
-| <details><summary></summary><img src="docs/images/user-story-testing/battleships-.png"></details> | | | |
+| As a user, I want to have the option to play the game again without having to re-load the game. | User completes the game | Upon completion of the game the user can select return to main menu, which will reset the boards allowing them to select start game again. | Works as intended. | 
+| <details><summary></summary><img src="docs/images/user-story-testing/battleships-ust-5.png"></details> | | | |
 
 | **User Story 6** | **User Action** | **Desired Outcome** | **Actual Outcome** |
 |------------------|-----------------|---------------------|--------------------|
-| w | x | y | z | 
-| <details><summary></summary><img src="docs/images/user-story-testing/battleships-.png"></details> | | | |
+| As a user, I want to be notified if I have won or lost. | User wins/loses the game | The user is brought to the end game screen, if they win they are displayed a message informing them they have, if not the opposite. | Works as inteded. | 
+| <details><summary></summary><img src="docs/images/user-story-testing/battleships-ust-6-a.png"><img src="docs/images/user-story-testing/battleships-ust-6-b.png"></details> | | | |
 
 | **User Story 7** | **User Action** | **Desired Outcome** | **Actual Outcome** |
 |------------------|-----------------|---------------------|--------------------|
-| w | x | y | z | 
-| <details><summary></summary><img src="docs/images/user-story-testing/battleships-.png"></details> | | | |
+| As a user, I want play a different game each time against the computer. | Play the game | The computer randomly generates a board each time the game is initiated. | Works as intended. | 
+| <details><summary></summary><img src="docs/images/user-story-testing/battleships-ust-7.png"></details> | | | |
 
 | **User Story 8** | **User Action** | **Desired Outcome** | **Actual Outcome** |
 |------------------|-----------------|---------------------|--------------------|
-| w | x | y | z | 
-| <details><summary></summary><img src="docs/images/user-story-testing/battleships-.png"></details> | | | |
+| As an owner, I want to provide the user with an colourful and interactive game that they can play. | User loads the game, at any point. | Several colourful features have been implemented to make the game more interactive and the user can visually see their boards and game instructions throughout. | Works as intended. | 
+| <details><summary></summary><img src="docs/images/user-story-testing/battleships-ust-8.png"></details> | | | |
 
 | **User Story 9** | **User Action** | **Desired Outcome** | **Actual Outcome** |
 |------------------|-----------------|---------------------|--------------------|
-| w | x | y | z | 
-| <details><summary></summary><img src="docs/images/user-story-testing/battleships-.png"></details> | | | |
+| As an owner, I want to provide the user with easy to navigate menu and prompts throughout the game. | User come to any menu in the game | The menus are used at several points in the game to navigate the user back to the key areas - in order to give them key instructions on what they want to happen next. | Works as intended. | 
+| <details><summary></summary><img src="docs/images/user-story-testing/battleships-ust-9-a.png"><img src="docs/images/user-story-testing/battleships-ust-9-b.png"></details> | | | |
 
 | **User Story 10** | **User Action** | **Desired Outcome** | **Actual Outcome** |
 |------------------|-----------------|---------------------|--------------------|
-| w | x | y | z | 
-| <details><summary></summary><img src="docs/images/user-story-testing/battleships-.png"></details> | | | |
+| As an owner, I want to provide the user with visual feedback throughout the game. | User play the game. | Throughout all stags of the game the user is provided with visual feed back, this is particuallary prominent when they place their ships on their board or onto the computer's board. | Works as intended. | 
+| <details><summary></summary><img src="docs/images/user-story-testing/battleships-ust-10-a.png"><img src="docs/images/user-story-testing/battleships-ust-10-b.png"></details> | | | |
 
 | **User Story 11** | **User Action** | **Desired Outcome** | **Actual Outcome** |
 |------------------|-----------------|---------------------|--------------------|
-| w | x | y | z | 
-| <details><summary></summary><img src="docs/images/user-story-testing/battleships-.png"></details> | | | |
+| As an owner, I want to provide the user with a different experience each time they play the game. | Play the game | The computer randomly generates a board each time the game is initiated. | Works as intended. | 
+| <details><summary></summary><img src="docs/images/user-story-testing/battleships-ust-11.png"></details> | | | |
 
 | **User Story 12** | **User Action** | **Desired Outcome** | **Actual Outcome** |
 |------------------|-----------------|---------------------|--------------------|
-| w | x | y | z | 
-| <details><summary></summary><img src="docs/images/user-story-testing/battleships-.png"></details> | | | |
+| As an owner, I want the user to made aware if they have won/lost, and to allow them to quit the game. | User wins/loses the game | The user is informed if they have won or lost, then brought to the end game menu which allows them to select the quit option. | Works as intended. | 
+| <details><summary></summary><img src="docs/images/user-story-testing/battleships-ust-12-a.png"><img src="docs/images/user-story-testing/battleships-ust-12-b.png"><img src="docs/images/user-story-testing/battleships-ust-12-c.png"><img src="docs/images/user-story-testing/battleships-ust-12-d.png"></details> | | | |
 
 | **User Story 13** | **User Action** | **Desired Outcome** | **Actual Outcome** |
 |------------------|-----------------|---------------------|--------------------|
-| w | x | y | z | 
-| <details><summary></summary><img src="docs/images/user-story-testing/battleships-.png"></details> | | | |
+| As an owner, I want the user to be able to access my social media if they had any questions. | User load the game via Heroku | Underneath the game the social media area is clearly shown. | Works as intended. | 
+| <details><summary></summary><img src="docs/images/user-story-testing/battleships-ust-13.png"></details> | | | |
 
 ## Bugs and Errors
 
