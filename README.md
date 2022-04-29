@@ -96,7 +96,7 @@ The user will then be asked if they'd like to place their ship Vertically(V), or
 
 The ships that are placed will be visually represented by 'X' 's on the board.
 
-If they user tries to place a ship that will go off the board; they are prompted with a warning in red and the steps will repeat.
+If the user tries to place a ship that will go off the board; they are prompted with a warning in red and the steps will repeat.
 
 If the user tries to place a ship that will go over another ship; they are prompted with a warning in red and the steps will also repeat again.
 
@@ -298,7 +298,7 @@ The social media links can be found on the live version of the Heroku app, allow
 - time
 
 #### Third Party Libraries
-- [Colorama](https://pypi.org/project/colorama/)
+- [Colorama](https://pypi.org/project/colorama/) - Justification - I decided to use this thrid party library as there is no built in featured library for colours in Python and I wanted to make the experience better for users.
 
 ### Frameworks and Other Technologies
 - [GitHub](https://github.com/)
@@ -326,7 +326,7 @@ The [PEP8 Validation Service](http://pep8online.com/) was used to check the Pyth
 
 | **User Story 1** | **User Action** | **Desired Outcome** | **Actual Outcome** |
 |------------------|-----------------|---------------------|--------------------|
-| As a user, I want to be able to play the game Battleships. | Select play from the menu options | The game of Battleships to start. | Works as intended. | 
+| As a user, I want to be able to play the game Battleships. | Select play from the menu options | The game of Battleships starts. | Works as intended. | 
 | <details><summary></summary><img src="docs/images/user-story-testing/battleships-ust-1.png"></details> | | | |
 
 | **User Story 2** | **User Action** | **Desired Outcome** | **Actual Outcome** |
@@ -351,7 +351,7 @@ The [PEP8 Validation Service](http://pep8online.com/) was used to check the Pyth
 
 | **User Story 6** | **User Action** | **Desired Outcome** | **Actual Outcome** |
 |------------------|-----------------|---------------------|--------------------|
-| As a user, I want to be notified if I have won or lost. | User wins/loses the game | The user is brought to the end game screen, if they win they are displayed a message informing them they have, if not the opposite. | Works as inteded. | 
+| As a user, I want to be notified if I have won or lost. | User wins/loses the game | The user is brought to the end game screen, if they win, they are displayed a message informing them they have, if not the opposite. | Works as inteded. | 
 | <details><summary></summary><img src="docs/images/user-story-testing/battleships-ust-6-a.png"><img src="docs/images/user-story-testing/battleships-ust-6-b.png"></details> | | | |
 
 | **User Story 7** | **User Action** | **Desired Outcome** | **Actual Outcome** |
@@ -366,30 +366,36 @@ The [PEP8 Validation Service](http://pep8online.com/) was used to check the Pyth
 
 | **User Story 9** | **User Action** | **Desired Outcome** | **Actual Outcome** |
 |------------------|-----------------|---------------------|--------------------|
-| As an owner, I want to provide the user with easy to navigate menu and prompts throughout the game. | User come to any menu in the game | The menus are used at several points in the game to navigate the user back to the key areas - in order to give them key instructions on what they want to happen next. | Works as intended. | 
+| As an owner, I want to provide the user with easy to navigate menu and prompts throughout the game. | User come to any menu in the game | The menus are used at several points in the game to navigate the user back to the key areas - in order to give them key instructions on what they want to happen next. Game prompts are also used to instruct the user on how to move forward in the game. | Works as intended. | 
 | <details><summary></summary><img src="docs/images/user-story-testing/battleships-ust-9-a.png"><img src="docs/images/user-story-testing/battleships-ust-9-b.png"></details> | | | |
 
 | **User Story 10** | **User Action** | **Desired Outcome** | **Actual Outcome** |
 |------------------|-----------------|---------------------|--------------------|
-| As an owner, I want to provide the user with visual feedback throughout the game. | User play the game. | Throughout all stags of the game the user is provided with visual feed back, this is particuallary prominent when they place their ships on their board or onto the computer's board. | Works as intended. | 
+| As an owner, I want to provide the user with visual feedback throughout the game. | User play the game / incorrect input | Throughout all stages of the game the user is provided with visual feed back, this is particuallary prominent when they place their ships on their board or onto the computer's board or if they make a mistake with user input. | Works as intended. | 
 | <details><summary></summary><img src="docs/images/user-story-testing/battleships-ust-10-a.png"><img src="docs/images/user-story-testing/battleships-ust-10-b.png"></details> | | | |
 
 | **User Story 11** | **User Action** | **Desired Outcome** | **Actual Outcome** |
-|------------------|-----------------|---------------------|--------------------|
+|-------------------|-----------------|---------------------|--------------------|
 | As an owner, I want to provide the user with a different experience each time they play the game. | Play the game | The computer randomly generates a board each time the game is initiated. | Works as intended. | 
 | <details><summary></summary><img src="docs/images/user-story-testing/battleships-ust-11.png"></details> | | | |
 
 | **User Story 12** | **User Action** | **Desired Outcome** | **Actual Outcome** |
-|------------------|-----------------|---------------------|--------------------|
+|-------------------|-----------------|---------------------|--------------------|
 | As an owner, I want the user to made aware if they have won/lost, and to allow them to quit the game. | User wins/loses the game | The user is informed if they have won or lost, then brought to the end game menu which allows them to select the quit option. | Works as intended. | 
 | <details><summary></summary><img src="docs/images/user-story-testing/battleships-ust-12-a.png"><img src="docs/images/user-story-testing/battleships-ust-12-b.png"><img src="docs/images/user-story-testing/battleships-ust-12-c.png"><img src="docs/images/user-story-testing/battleships-ust-12-d.png"></details> | | | |
 
 | **User Story 13** | **User Action** | **Desired Outcome** | **Actual Outcome** |
-|------------------|-----------------|---------------------|--------------------|
+|-------------------|-----------------|---------------------|--------------------|
 | As an owner, I want the user to be able to access my social media if they had any questions. | User load the game via Heroku | Underneath the game the social media area is clearly shown. | Works as intended. | 
 | <details><summary></summary><img src="docs/images/user-story-testing/battleships-ust-13.png"></details> | | | |
 
 ## Bugs and Errors
+
+| **Bug/Error** | **Resolution** |
+|---------------|----------------|
+| Upon adding the Colour class to the boards on the move functions, I noticed that the scoring counter wasn't working as intended and players could always guess at the same location and the computer could too. | To fix this I had to add the class to the  areas that checked agaisnt the text so it could check they matched exactly as printed in the code. |
+| After loading favicon and all its images to GitPod I noticed, that it was not loading onto the webpage. | After attempting to move files, and change directories with no success I opted to use Flaticon instead as the image could be sourced online |
+| When loading the game again after winning, I noticed that the boards had not reset, which would cause major game complications if the user had to play again. | I decided to create a function that reset all the boards after the game had completed fixing the issue |
 
 ## Deployment
 
