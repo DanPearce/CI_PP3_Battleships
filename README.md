@@ -27,6 +27,7 @@ The application has been uploaded to Heroku for convience for the user to play o
 5. [Technologies](#technologies)
     - [Languages](#languages)
     - [Libraries](#libraries)
+    - [APIs](#apis)
     - [Frameworks and Other Technologies](#frameworks-and-other-technologies)
 6. [Validation and Testing](#validation-and-testing)
     - [Python PEP8 Testing](#python-pep8-testing)
@@ -69,6 +70,11 @@ The application has been uploaded to Heroku for convience for the user to play o
 Upon loading the game via Heroku the user is presented with a simple landing HTML document, that details the developer's socials and displays a terminal on the web page. If loaded on a PC only the game itself will just load.
 
 When loaded the user is presented with the title of the game which is presented using ASCII art and this is then followed by the main menu.
+
+#### Login Screen
+When the game has fully loaded the user is prompted to log into their account; which is stored in a Google Sheet.
+
+If the user doesn't have an account they can create one! Completion of logging in/creating a user will bring the user to the main menu.
 
 #### Main Menu
 The main menu consists of the two main features of the game; either allowing the user to play the game, or if unfamiliar with the rules they have the option to view the rules.
@@ -148,6 +154,7 @@ Upon deciding to quit, the user is presented with a visual goodbye screen and th
 11. As an owner, I want to provide the user with a different experience each time they play the game.
 12. As an owner, I want the user to made aware if they have won/lost, and to allow them to quit the game.
 13. As an owner, I want the user to be able to access my social media if they had any questions.
+14. As an owner, I want to provide the user with the ability to log in, and to keep track of how many times they have won.
 
 ## Design
 
@@ -200,6 +207,20 @@ The title provides the user with the game's title using ASCII Art, and the game 
 </details>
 <details><summary>Title Screenshot</summary>
 <img src="docs/images/features/battleships-title.png">
+</details>
+
+### Login Menu
+The Login menu is first menu the user will see, and this allows them to 'login' to their existing account and or create a new one!
+
+The feature of being able to log in also allows for us to keep track of each user's score!
+
+- User Stories: 14
+
+<details><summary>Login Screenshot</summary>
+<img src="docs/images/features/battleships-login.png">
+</details>
+<details><summary>Login and View Score Screenshot</summary>
+<img src="docs/images/features/battleships-login-score.png">
 </details>
 
 ### Game Rules
@@ -299,6 +320,13 @@ The social media links can be found on the live version of the Heroku app, allow
 
 #### Third Party Libraries
 - [Colorama](https://pypi.org/project/colorama/) - Justification - I decided to use this thrid party library as there is no built in featured library for colours in Python and I wanted to make the experience better for users.
+- [GSpread](https://pypi.org/project/gspread/) - Justification - I decided to include this third party library as I needed to manipulate and read the data stored in a Google Sheet in order to successfully create a user login. There is no built in library for this feature.
+- [Google Auth](https://pypi.org/project/google-auth/) -  - Justification - I decided to include this third party library as I needed to authenticate my connection to Google Spreadsheets. There is no built in library for this feature.
+- [Maskpass](https://pypi.org/project/maskpass/) - Justification - I decided to include this third party library as I decided that while a user was inputing a password - said password should be masked. There is no built in library for this feature.
+
+### APIs
+- [Google Sheets API](https://developers.google.com/sheets/api)
+- [Google Drive API](https://developers.google.com/drive)
 
 ### Frameworks and Other Technologies
 - [GitHub](https://github.com/)
@@ -306,6 +334,8 @@ The social media links can be found on the live version of the Heroku app, allow
 - [Heroku](https://www.heroku.com)
 - [Font Awesome](https://fontawesome.com/)
 - [Diagrams.net](https://app.diagrams.net/)
+- [Google Cloud Platform](https://console.cloud.google.com/)
+- [Google Sheets](https://www.google.co.uk/sheets/about/)
 - [Google Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools)
 - [Google Fonts](https://fonts.google.com/)
 - [Flaticon](https://www.flaticon.com/)
@@ -389,6 +419,10 @@ The [PEP8 Validation Service](http://pep8online.com/) was used to check the Pyth
 | As an owner, I want the user to be able to access my social media if they had any questions. | User load the game via Heroku | Underneath the game the social media area is clearly shown. | Works as intended. | 
 | <details><summary></summary><img src="docs/images/user-story-testing/battleships-ust-13.png"></details> | | | |
 
+| **User Story 14** | **User Action** | **Desired Outcome** | **Actual Outcome** |
+|-------------------|-----------------|---------------------|--------------------|
+| As an owner, I want to provide the user with the ability to log in, and to keep track of how many times they have won. | User load the game | User is able to log into an account and keep track of the times they have won | Works as intended. |
+| <details><summary></summary><img src="docs/images/user-story-testing/battleships-ust-14-a.png"><img src="docs/images/user-story-testing/battleships-ust-14-b.png"></details> | | | |
 ## Bugs and Errors
 
 | **Bug/Error** | **Resolution** |
@@ -396,6 +430,7 @@ The [PEP8 Validation Service](http://pep8online.com/) was used to check the Pyth
 | Upon adding the Colour class to the boards on the move functions, I noticed that the scoring counter wasn't working as intended and players could always guess at the same location and the computer could too. | To fix this I had to add the class to the  areas that checked agaisnt the text so it could check they matched exactly as printed in the code. |
 | After loading favicon from [favicon.io](https://favicon.io) and all its images to GitPod I noticed, that it was not loading onto the webpage. | After attempting to move files, and change directories with no success I opted to use Flaticon instead as the image could be sourced online |
 | When loading the game again after winning, I noticed that the boards had not reset, which would cause major game complications if the user had to play again. | I decided to create a function that reset all the boards after the game had completed fixing the issue |
+| Upon adding the login feature, I was presented with an error at the end while trying to increment the PLAYER_SCORE. | I had to convert the value from the spreadsheet to an integer, I done this by using the int() method. |
 
 ## Deployment
 This application was deployed to Heroku via the Heroku Command Line Interface(CLI).
