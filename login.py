@@ -180,9 +180,7 @@ def add_new_user(name, password, score):
     """
     global PLAYER_SCORE
     global USERNAME_ROW
-    global USERNAME
     user_add = [name, password, score]
     USERNAME_DATA.append_row(user_add)
     USERNAME_ROW = USERNAME_DATA.find(USERNAME).row
     PLAYER_SCORE = int(USERNAME_DATA.row_values(USERNAME_ROW)[2])
-
