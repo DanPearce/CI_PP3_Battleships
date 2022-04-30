@@ -7,6 +7,7 @@ Developed by Dan Pearce using the Python language!
 import os
 import time
 import random
+import login
 from colours import Colours as Txt
 
 # Global Variables
@@ -193,6 +194,7 @@ def start_game():
             move(USER_GUESS_BOARD)
             break
         if ships_hit(USER_GUESS_BOARD) == 15:
+            increment_score()
             new_line()
             time.sleep(1.5)
             new_line()
@@ -660,6 +662,15 @@ def reset_boards():
     USER_GUESS_BOARD = [[" "] * 8 for x in range(8)]
     COMPUTER_PLACE_BOARD = [[" "] * 8 for x in range(8)]
     COMPUTER_GUESS_BOARD = [[" "] * 8 for x in range(8)]
+
+
+def increment_score():
+    """
+    Increments the users winning score on the Google Spreadsheet
+    """
+    login.PLAYER_SCORE += 1
+    login.USERNAME_DATA.update_cell((login.USERNAME_ROW), 3,
+                                    login.PLAYER_SCORE)
 
 
 def init_program():
