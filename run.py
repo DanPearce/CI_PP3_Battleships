@@ -677,8 +677,7 @@ def init_program():
     """
     Starts the python code.
     """
-    title()
-    game_menu()
+    login.welcome()
 
 
 # Initiates the program upon loading - Also Script Guard

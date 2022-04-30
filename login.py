@@ -37,7 +37,7 @@ def welcome():
     new_line()
     time.sleep(1)
     print(Txt.MAIN + "Please choose and option:")
-    game_options = Txt.MAIN + "1) Login\n 2) Create a new user\n\n"
+    game_options = Txt.MAIN + "1) Login\n2) Create a new user\n\n"
     user_option = input(game_options)
     while user_option not in ("1", "2"):
         print(Txt.ERROR + "Please choose a correct option, either '1' or '2'")
@@ -95,7 +95,7 @@ def existing_user():
     clear()
     title()
     print(f"{Txt.USER}Welcome back, {USERNAME}!")
-    time.sleep(1.5)
+    time.sleep(1)
     USERNAME_ROW = USERNAME_DATA.find(USERNAME).row
     PLAYER_USERNAME = USERNAME_DATA.row_values(USERNAME_ROW)[0]
     PLAYER_PASSWORD = USERNAME_DATA.row_values(USERNAME_ROW)[1]
@@ -104,11 +104,14 @@ def existing_user():
 
     if username_pass == PLAYER_PASSWORD:
         new_line()
+        time.sleep(1)
         print(f"{Txt.USER}Thanks for logging in, {PLAYER_USERNAME}!")
         new_line()
         time.sleep(1)
         print(f"{Txt.MAIN}You have won {PLAYER_SCORE} time(s) against the" +
               " computer!")
+        new_line()
+        time.sleep(1.5)
         game_menu()
     else:
         print(Txt.ERROR + "Incorrect password!")
@@ -132,6 +135,8 @@ def create_user():
         create_user()
     special_characters = '"!@#$%^&*()-+?_=,<>/"'
     while any(char in special_characters for char in new_user):
+        new_line()
+        time.sleep(1)
         print(Txt.ERROR + "Username cannot contain special characters!")
         new_line()
         time.sleep(1)
@@ -140,18 +145,24 @@ def create_user():
         global USERNAME
         USERNAME = new_user
         new_line()
-        print(f"{Txt.USER}{USERNAME} avaliable!")
-        new_user_pass = maskpass.askpass(prompt="Password:", mask="*")
+        time.sleep(1)
+        print(f"{Txt.USER}{USERNAME} is avaliable!")
+        new_line()
+        new_user_pass = maskpass.askpass(prompt="Create password:", mask="*")
         while len(new_user_pass) >= 15:
-            print(Txt.ERROR + "Username cannot be longer than 15 characters.")
+            new_line()
+            print(Txt.ERROR + "Password cannot be longer than 15 characters.")
             new_line()
             time.sleep(1)
-            new_user_pass = maskpass.askpass(prompt="Password:", mask="*")
+            new_user_pass = maskpass.askpass(prompt="Create password:",
+                                             mask="*")
         while " " in new_user_pass:
+            new_line()
             print(Txt.ERROR + "Password cannot contain spaces!")
             new_line()
             time.sleep(1)
-            new_user_pass = maskpass.askpass(prompt="Password:", mask="*")
+            new_user_pass = maskpass.askpass(prompt="Create password:",
+                                             mask="*")
         score = 0
         add_new_user(new_user, new_user_pass, score)
         clear()
@@ -164,9 +175,9 @@ def create_user():
     elif new_user in USERNAME_DATA.col_values(1):
         clear()
         title()
-        print(Txt.ERROR + "That username already exists!\n Try another!")
+        print(Txt.ERROR + "That username already exists!\nTry another!")
         new_line()
-        time.sleep(1)
+        time.sleep(1.5)
         create_user()
 
 
