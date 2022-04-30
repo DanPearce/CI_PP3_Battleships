@@ -121,7 +121,15 @@ def create_user():
     """
     Creates a new user to be added to the Google Sheet
     """
-
+    clear()
+    title()
+    time.sleep(1)
+    new_user = input(Txt.MAIN + "Please enter a username:\n")
+    while len(new_user) >= 15:
+        print(Txt.ERROR + "Username cannot be longer than 15 characters.")
+        new_line()
+        time.sleep(1)
+        create_user()
 
 def add_new_user(name, password, score):
     """
