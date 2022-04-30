@@ -18,6 +18,10 @@ CREDS = service_account.Credentials.from_service_account_file('creds.json',
 CLIENT = gspread.authorize(CREDS)
 USERNAME_DATA = CLIENT.open('battleships_usernames').sheet1
 USERNAME = None
+USERNAME_ROW = None
+PLAYER_USERNAME = None
+PLAYER_PASSWORD = None
+PLAYER_SCORE = None
 
 # Login Functions
 
@@ -83,6 +87,18 @@ def existing_user():
     Existing user is prompted to enter their password which is checked
     agaisnt the Google Sheet.
     """
+    global USERNAME_ROW
+    global PLAYER_USERNAME
+    global PLAYER_PASSWORD
+    global PLAYER_SCORE
+    clear()
+    title()
+    print(f"{Txt.USER}Welcome back, {USERNAME}!")
+    time.sleep(1.5)
+    USERNAME_ROW = USERNAME_DATA.find(USERNAME).row
+    PLAYER_USERNAME = USERNAME_DATA.row_values(USERNAME_ROW)[0]
+    PLAYER_PASSWORD = USERNAME_DATA.row_values(USERNAME_ROW)[1]
+    PLAYER_SCORE = USERNAME_DATA.row_values(USERNAME_ROW)[2]
 
 
 def create_user():
