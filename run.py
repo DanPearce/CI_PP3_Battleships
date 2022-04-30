@@ -106,7 +106,9 @@ def game_menu():
     or to play the game
     """
     time.sleep(1)
+    print(" ")
     print(Txt.MAIN + "Please choose an option:")
+    print(" ")
     game_options = Txt.MAIN + "1) Play the game\n2) View the rules\n\n"
     user_option = input(game_options)
 
@@ -193,7 +195,7 @@ def start_game():
             display_board(USER_GUESS_BOARD)
             move(USER_GUESS_BOARD)
             break
-        if ships_hit(USER_GUESS_BOARD) == 15:
+        if ships_hit(USER_GUESS_BOARD) == 1:
             increment_score()
             new_line()
             time.sleep(1.5)
@@ -669,8 +671,8 @@ def increment_score():
     Increments the users winning score on the Google Spreadsheet
     """
     login.PLAYER_SCORE += 1
-    login.USERNAME_DATA.update_cell((login.USERNAME_ROW), 3,
-                                    login.PLAYER_SCORE)
+    login.USERNAME_DATA.update_cell(login.USERNAME_ROW, 3, +
+                                    int(login.PLAYER_SCORE))
 
 
 def init_program():

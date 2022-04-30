@@ -99,7 +99,7 @@ def existing_user():
     USERNAME_ROW = USERNAME_DATA.find(USERNAME).row
     PLAYER_USERNAME = USERNAME_DATA.row_values(USERNAME_ROW)[0]
     PLAYER_PASSWORD = USERNAME_DATA.row_values(USERNAME_ROW)[1]
-    PLAYER_SCORE = USERNAME_DATA.row_values(USERNAME_ROW)[2]
+    PLAYER_SCORE = int(USERNAME_DATA.row_values(USERNAME_ROW)[2])
     username_pass = maskpass.askpass(prompt="Password:", mask="*")
 
     if username_pass == PLAYER_PASSWORD:
