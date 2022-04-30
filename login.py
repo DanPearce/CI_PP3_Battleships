@@ -3,9 +3,9 @@ Login Authentiction for Battleships game -
 Uses Google Sheets API.
 """
 # Language and Script Imports
-from google.oauth2 import service_account
-import gspread
 import time
+import gspread
+from google.oauth2 import service_account
 from run import clear, new_line, game_menu, title
 from colours import Colours as Txt
 
@@ -26,11 +26,29 @@ def welcome():
     Welcomes the user to the game.
     Prompts user to log into their account.
     """
+    title()
+    print(Txt.MAIN + "Welcome to Batttleships!\n")
+    time.sleep(1)
+    new_line()
+    print(Txt.MAIN + "Please choose and option:")
+    game_options = Txt.MAIN + "1) Login\n 2) Create a new user\n\n"
+    user_option = input(game_options)
+    while user_option not in ("1", "2"):
+        print(Txt.ERROR + "Please choose a correct option, either '1' or '2'")
+        user_option = input(game_options)
+    if user_option == "1":
+        clear()
+        title()
+        check_user()
+    elif user_option == "2":
+        clear()
+        title()
+        create_user()
 
 
 def check_user():
     """
-    Checks the user's input agaisnt the data stored in the 
+    Checks the user's input agaisnt the data stored in the
     Google Sheet
     """
 
