@@ -16,3 +16,36 @@ CLIENT = gspread.authorize(CREDS)
 USERNAME_DATA = CLIENT.open('battleships_usernames').sheet1
 
 # Login Functions
+
+
+def welcome():
+    """
+    Welcomes the user to the game.
+    Prompts user to log into their account.
+    """
+
+
+def check_user():
+    """
+    Checks the user's input agaisnt the data stored in the 
+    Google Sheet
+    """
+
+
+def existing_user():
+    """
+    Existing user is prompted to enter their password which is checked
+    agaisnt the Google Sheet.
+    """
+
+
+def create_user():
+    """
+    Creates a new user to be added to the Google Sheet
+    """
+
+
+def add_new_user(name, password, score):
+    """
+    Add's the data from create_user to the Google Sheet
+    """
