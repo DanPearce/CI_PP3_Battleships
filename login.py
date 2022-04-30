@@ -5,6 +5,9 @@ Uses Google Sheets API.
 # Language and Script Imports
 from google.oauth2 import service_account
 import gspread
+import time
+from run import clear, new_line, game_menu, title
+from colours import Colours as Txt
 
 # Global Variables
 SCOPE = ['https://www.googleapis.com/auth/spreadsheets',
@@ -48,4 +51,8 @@ def create_user():
 def add_new_user(name, password, score):
     """
     Add's the data from create_user to the Google Sheet
+    passing:
+    - name the user's desired username
+    - password the user's desired password
+    - score setting the new user's score to zero
     """
