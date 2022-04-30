@@ -100,7 +100,16 @@ def existing_user():
     PLAYER_USERNAME = USERNAME_DATA.row_values(USERNAME_ROW)[0]
     PLAYER_PASSWORD = USERNAME_DATA.row_values(USERNAME_ROW)[1]
     PLAYER_SCORE = USERNAME_DATA.row_values(USERNAME_ROW)[2]
-    username_pass = maskpass.askpass(prompt="Password", mask="*")
+    username_pass = maskpass.askpass(prompt="Password:", mask="*")
+
+    if username_pass == PLAYER_PASSWORD:
+        new_line()
+        print(f"{Txt.USER}Thanks for logging in, {PLAYER_USERNAME}!")
+        new_line()
+        time.sleep(1)
+        print(f"{Txt.MAIN}You have won {PLAYER_SCORE} time(s) against the" +
+              " computer!")
+        game_menu()
 
 
 def create_user():
