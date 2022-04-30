@@ -21,7 +21,7 @@ The application has been uploaded to Heroku for convience for the user to play o
     - [Owner](#owner)
 3. [Design](#design)
     - [Structure](#structure)
-    - [Flowchart](#flowchart)
+    - [Technical Design](#technical-design)
     - [Colour](#colour)
 4. [Main Features](#main-features)
 5. [Technologies](#technologies)
@@ -160,7 +160,7 @@ To achieve this I deciced to include various features such as;
 - Detailed visual represnetations of the boards used during the game.
 - Visual cues to indicate to the user if something has gone wrong.
 
-### Flowchart
+### Technical Design
 For the structure and logic of the application I have created a flowchart which can be viewed below:
 <details><summary>Flowchart</summary>
 <img src="docs/images/battleships-flow.png">
@@ -394,11 +394,46 @@ The [PEP8 Validation Service](http://pep8online.com/) was used to check the Pyth
 | **Bug/Error** | **Resolution** |
 |---------------|----------------|
 | Upon adding the Colour class to the boards on the move functions, I noticed that the scoring counter wasn't working as intended and players could always guess at the same location and the computer could too. | To fix this I had to add the class to the  areas that checked agaisnt the text so it could check they matched exactly as printed in the code. |
-| After loading favicon and all its images to GitPod I noticed, that it was not loading onto the webpage. | After attempting to move files, and change directories with no success I opted to use Flaticon instead as the image could be sourced online |
+| After loading favicon from [favicon.io](https://favicon.io) and all its images to GitPod I noticed, that it was not loading onto the webpage. | After attempting to move files, and change directories with no success I opted to use Flaticon instead as the image could be sourced online |
 | When loading the game again after winning, I noticed that the boards had not reset, which would cause major game complications if the user had to play again. | I decided to create a function that reset all the boards after the game had completed fixing the issue |
 
 ## Deployment
+This application was deployed to Heroku via the Heroku Command Line Interface(CLI).
+
+### Heroku Application Set-up
+1. Sign into [Heroku](https://www.heroku.com) and create a new application.
+2. From the new application's page on Heroku, navigate to settings.
+3. Under the Config-Vars option - set the key too 8000, and the contents of 'VALUE' to the entire contents of the creds.json file.
+4. Under the Buildpacks option - Add Python and NodeJS to the application - ensuring to make sure Python is on top of NodeJS.
+
+### Deployent to Heroku Via CLI/GitPod
+1. Download and install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) client either to your machine or install your working IDE - I used GitPod.
+2. Log in to Heroku using the command "heroku login -i" - Which then prompts you for your email and password.
+3. Once logged in, I could use the command "heroku apps" to find the name of my application.
+4. After knowing the name of my application I was able to set up heroku remote by using the command "hero git:remote -a <name-of-my-app>".
+5. Then using command "Pip3 freeze > requirements.txt", I made sure that any requirements that are needed to be read by Heroku are added to the requirements.txt file.
+5. Then commit any changes and push the changes to GitHub.
+6. Using command "git push heroku main" - allowed me to deploy the application to the live site - once waiting for the site to build the application could then be used.
+
+There are alternative methods of deployment, however due to secuirty reasons some features have been disabled on Heroku's website for the time being.
 
 ## Credits
 
+### Colours and Artwork
+- [Text to ASCII Art Generator](https://patorjk.com/software/taag/) by [Patojk](http://patorjk.com/) - Was used to generate the title art that was used in the game.
+- [CSS Gradient](https://cssgradient.io/) was used to create the background image CSS for the gradient viewable on the HTML page.
+- [Flaticon](https://www.flaticon.com/premium-icon/ship_870119?term=ship&page=1&position=13&page=1&position=13&related_id=870119) was used as a favicon for the web page.
+
+### Code
+- [Learning Python](https://www.oreilly.com/library/view/learning-python-5th/9781449355722/) by [Mark Lutz](https://www.oreilly.com/pub/au/446) was used to broaden my knowledge in the Python language.
+- [Clear Screen Python](https://www.geeksforgeeks.org/clear-screen-python/) article was used to help me understand how to clear the Python program.
+- [How to Print Colours in Python](https://www.youtube.com/watch?v=u51Zjlnui4Y&ab_channel=TechWithTim) by [Tech With Tim](https://www.youtube.com/channel/UC4JX40jDee_tINbkjycV4Sg) on YouTube provided me with a great tutorial on how to use Colorama and the colours in Python.
+- [Programiz](https://www.programiz.com/) helped me to understand the concepts of [Classes](https://www.programiz.com/python-programming/class) in Python and the [Sleep](https://www.programiz.com/python-programming/time/sleep) function too.
+- [Knowledge Mavens](https://www.youtube.com/c/KnowledgeMavens1) helped me to understand the logic behind creating a game of Battleships in Python.
+- [Python GSpread Tutorial](https://www.youtube.com/watch?v=ddf5Z0aQPzY) by [Frank Mularcik](https://www.youtube.com/channel/UCNNBD6VYfwKHVeV2krJjVmw) on YouTube was used to help me understand how to use Google Sheets API.
+
 ## Acknowledgements
+I would like to thank:
+- Mo Shami, my mentor throughout the project, who has provided me valuable information.
+- My partner, Harry, who continues to be my rock throughout my learning process and takes the cats off my hands while he's home <3!
+- Anyone who continues to support my effort to learn and improve my abilities in software development.
