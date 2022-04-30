@@ -130,6 +130,12 @@ def create_user():
         new_line()
         time.sleep(1)
         create_user()
+    special_characters = '"!@#$%^&*()-+?_=,<>/"'
+    while any(char in special_characters for char in new_user):
+        print(Txt.ERROR + "Username cannot contain special characters!")
+        new_line()
+        time.sleep(1)
+        create_user()
 
 def add_new_user(name, password, score):
     """
