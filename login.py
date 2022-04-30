@@ -17,6 +17,7 @@ CREDS = service_account.Credentials.from_service_account_file('creds.json',
                                                               scopes=SCOPE)
 CLIENT = gspread.authorize(CREDS)
 USERNAME_DATA = CLIENT.open('battleships_usernames').sheet1
+USERNAME = None
 
 # Login Functions
 
@@ -28,8 +29,8 @@ def welcome():
     """
     title()
     print(Txt.MAIN + "Welcome to Batttleships!\n")
-    time.sleep(1)
     new_line()
+    time.sleep(1)
     print(Txt.MAIN + "Please choose and option:")
     game_options = Txt.MAIN + "1) Login\n 2) Create a new user\n\n"
     user_option = input(game_options)
@@ -51,6 +52,30 @@ def check_user():
     Checks the user's input agaisnt the data stored in the
     Google Sheet
     """
+    check_username = input(Txt.MAIN + "Please enter your username:\n")
+    if check_username in USERNAME_DATA.col_values(1):
+        global USERNAME
+        USERNAME = check_username
+        existing_user()
+        return USERNAME
+    elif check_username not in USERNAME_DATA.col_values(1):
+        print(Txt.ERROR + "Incorrect username!")
+        time.sleep(1)
+        print(Txt.MAIN + "Please choose an option:")
+        game_options = Txt.MAIN + "1) Try again\n2) Create a new user\n\n"
+        user_option = input(game_options)
+        while user_option not in ("1", "2"):
+            print(Txt.ERROR + "Please choose a correct option, either '1' or" +
+                  " '2'")
+            user_option = input(game_options)
+        if user_option == "1":
+            clear()
+            title()
+            check_user()
+        elif user_option == "2":
+            clear()
+            title()
+            create_user()
 
 
 def existing_user():
