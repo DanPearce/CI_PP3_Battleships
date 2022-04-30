@@ -438,7 +438,8 @@ This application was deployed to Heroku via the Heroku Command Line Interface(CL
 ### Heroku Application Set-up
 1. Sign into [Heroku](https://www.heroku.com) and create a new application.
 2. From the new application's page on Heroku, navigate to settings.
-3. Under the Config-Vars option - set the key too 8000, and the contents of 'VALUE' to the entire contents of the creds.json file.
+3. Under the Config-Vars option - set the key too 'PORT', and the value to '8000'.
+4. Also under Config-Vars - set another key to 'CREDS' and setting the value to the entire document of our creds.json file.
 4. Under the Buildpacks option - Add Python and NodeJS to the application - ensuring to make sure Python is on top of NodeJS.
 
 ### Deployent to Heroku Via CLI/GitPod
