@@ -136,6 +136,22 @@ def create_user():
         new_line()
         time.sleep(1)
         create_user()
+    if new_user not in USERNAME_DATA.col_values(1):
+        global USERNAME
+        USERNAME = new_user
+        new_line()
+        print(f"{Txt.USER}{USERNAME} avaliable!")
+        new_user_pass = maskpass.askpass(prompt="Password:", mask="*")
+        while len(new_user_pass) >= 15:
+            print(Txt.ERROR + "Username cannot be longer than 15 characters.")
+            new_line()
+            time.sleep(1)
+            new_user_pass = maskpass.askpass(prompt="Password:", mask="*")
+        while " " in new_user_pass:
+            print(Txt.ERROR + "Password cannot contain spaces!")
+            new_line()
+            time.sleep(1)
+            new_user_pass = maskpass.askpass(prompt="Password:", mask="*")
 
 def add_new_user(name, password, score):
     """
