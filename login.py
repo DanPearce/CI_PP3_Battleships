@@ -178,3 +178,11 @@ def add_new_user(name, password, score):
     - password the user's desired password
     - score setting the new user's score to zero
     """
+    global PLAYER_SCORE
+    global USERNAME_ROW
+    global USERNAME
+    user_add = [name, password, score]
+    USERNAME_DATA.append_row(user_add)
+    USERNAME_ROW = USERNAME_DATA.find(USERNAME).row
+    PLAYER_SCORE = int(USERNAME_DATA.row_values(USERNAME_ROW)[2])
+
