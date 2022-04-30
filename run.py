@@ -195,7 +195,7 @@ def start_game():
             display_board(USER_GUESS_BOARD)
             move(USER_GUESS_BOARD)
             break
-        if ships_hit(USER_GUESS_BOARD) == 1:
+        if ships_hit(USER_GUESS_BOARD) == 15:
             increment_score()
             new_line()
             time.sleep(1.5)
