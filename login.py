@@ -152,6 +152,17 @@ def create_user():
             new_line()
             time.sleep(1)
             new_user_pass = maskpass.askpass(prompt="Password:", mask="*")
+        score = 0
+        add_new_user(new_user, new_user_pass, score)
+        clear()
+        title()
+        print(f"{Txt.USER}Thanks {new_user}! You're all set up!")
+        new_line()
+        time.sleep(1)
+        print(Txt.MAIN + "Welcome to Battleships!")
+        game_menu()
+
+
 
 def add_new_user(name, password, score):
     """
