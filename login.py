@@ -161,7 +161,13 @@ def create_user():
         time.sleep(1)
         print(Txt.MAIN + "Welcome to Battleships!")
         game_menu()
-
+    elif new_user in USERNAME_DATA.col_values(1):
+        clear()
+        title()
+        print(Txt.ERROR + "That username already exists!\n Try another!")
+        new_line()
+        time.sleep(1)
+        create_user()
 
 
 def add_new_user(name, password, score):
