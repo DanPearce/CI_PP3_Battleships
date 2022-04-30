@@ -3,7 +3,7 @@ Welcome to Battleships!
 The command-line version of Battleships
 Developed by Dan Pearce using the Python language!
 """
-# Langauge and Script imports
+# Language and Script imports
 import os
 import time
 import random
@@ -149,7 +149,7 @@ def rules():
     print(Txt.MAIN + "You will then turn by turn aim and place bombs onto " +
           "the computer's board to see if you have hit one of its ships.")
     time.sleep(1.5)
-    print(Txt.MAIN + "The computer wil randomly do the same to your board.")
+    print(Txt.MAIN + "The computer will randomly do the same to your board.")
     time.sleep(1.5)
     new_line()
     time.sleep(1.5)
@@ -177,7 +177,7 @@ def rules():
 def start_game():
     """
     When called, this function will start the game
-    and initiate the relevent functions as the
+    and initiate the relevant functions as the
     game progresses.
     """
     clear()
@@ -310,7 +310,7 @@ def display_board(board):
 def place_ships(board):
     """
     When called this function will place the ships
-    in either the Computer's boards or the will prompt
+    in either the computers boards or the will prompt
     the user for input to place onto their boards
     Passing: board so that the correct board can be
     altered depending on the stage of the game and if
@@ -360,7 +360,7 @@ def ship_on_board_check(board, ship, orient, row, col):
     - board: to check who's board is in use, display errors
     - ship: so that the ships size can be measured.
     - orient: to check the orientation for both types of r/c.
-    - row/col: to check the position agaisnt the ship size.
+    - row/col: to check the position against the ship size.
     """
     if board == COMPUTER_PLACE_BOARD:
         if orient == "H":
@@ -407,7 +407,7 @@ def ship_over_ship_check(board, ship, orient, row, col):
     - ship: to allow us to measure the size of the ship
     against the row/column.
     - orient: to check the orientation for both types of r/c.
-    - row/col: to determain if we're checking a row or column.
+    - row/col: to determine if we're checking a row or column.
     """
     if board == COMPUTER_PLACE_BOARD:
         if orient == "H":
@@ -447,7 +447,7 @@ def user_input(place_ship):
     """
     When called prompts the user for input
     and cycles through so that errors can be avoided.
-    Passing: place_ships in order to determain
+    Passing: place_ships in order to determine
     if the user is placing ships
     or if they're guessing.
     """
@@ -586,8 +586,8 @@ def user_input(place_ship):
 def ships_hit(board):
     """
     Will check the players and computers boards
-    for the ammount of "X"/"Hits" allowing us
-    to determain a winner.
+    for the amount of "X"/"Hits" allowing us
+    to determine a winner.
     Passing: board to check different boards
     """
     hit_user = 0

@@ -1,5 +1,5 @@
 """
-Login Authentiction for Battleships game -
+Login Authentication for Battleships game -
 Uses Google Sheets API.
 """
 # Language and Script Imports
@@ -54,7 +54,7 @@ def welcome():
 
 def check_user():
     """
-    Checks the user's input agaisnt the data stored in the
+    Checks the user's input against the data stored in the
     Google Sheet
     """
     check_username = input(Txt.MAIN + "Please enter your username:\n")
@@ -86,7 +86,7 @@ def check_user():
 def existing_user():
     """
     Existing user is prompted to enter their password which is checked
-    agaisnt the Google Sheet.
+    against the Google Sheet.
     """
     global USERNAME_ROW
     global PLAYER_USERNAME
@@ -146,7 +146,7 @@ def create_user():
         USERNAME = new_user
         new_line()
         time.sleep(1)
-        print(f"{Txt.USER}{USERNAME} is avaliable!")
+        print(f"{Txt.USER}{USERNAME} is available!")
         new_line()
         new_user_pass = maskpass.askpass(prompt="Create password:", mask="*")
         while len(new_user_pass) >= 15:
@@ -183,7 +183,7 @@ def create_user():
 
 def add_new_user(name, password, score):
     """
-    Add's the data from create_user to the Google Sheet
+    Adds the data from create_user to the Google Sheet
     passing:
     - name the user's desired username
     - password the user's desired password

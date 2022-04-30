@@ -5,9 +5,9 @@ Developed by, [Dan Pearce](https://danpearce.software/)
 
 ![Screen Capture](docs/images/battleships-sc.png)
 
-This version of Battleships has been developed using the Python language, and is intended to be a single player game where the user will play against the computer to try and win the game!
+This version of Battleships has been developed using the Python language and is intended to be a single player game where the user will play against the computer to try and win the game!
 
-The application has been uploaded to Heroku for convience for the user to play online, however if downloaded the game could also be played on any computer in the terminal/command-line!
+The application has been uploaded to Heroku for convenience for the user to play online, however if downloaded the game could also be played on any computer in the terminal/command-line!
 
 ## Contents
 1. [Application Goals and User Experience](#application-goals-and-user-experience)
@@ -43,7 +43,7 @@ The application has been uploaded to Heroku for convience for the user to play o
 - Play a fun and interactive version of Battleships.
 - Easily navigate around the game, with added prompts on how to play.
 - Easily find the rules of the game, especially needed for new users.
-- Try to win agasint the computer!
+- Try to win against the computer!
 
 ### Owner Goals
 - Provide the user with an interactive game.
@@ -59,7 +59,7 @@ The application has been uploaded to Heroku for convience for the user to play o
 
 ### User Expectations
 - To play a game of Battleships, with preferably no errors.
-- To be given details on each part of the game - differentriate between placing and guessing.
+- To be given details on each part of the game - differentiate between placing and guessing.
 - Key prompts at each stage of the game.
 - Easy and simple navigation.
 
@@ -72,9 +72,9 @@ Upon loading the game via Heroku the user is presented with a simple landing HTM
 When loaded the user is presented with the title of the game which is presented using ASCII art and this is then followed by the main menu.
 
 #### Login Screen
-When the game has fully loaded the user is prompted to log into their account; which is stored in a Google Sheet.
+When the game has fully loaded, the user is prompted to log into their account; which is stored in a Google Sheet.
 
-If the user doesn't have an account they can create one! Completion of logging in/creating a user will bring the user to the main menu.
+If the user doesn't have an account, they can create one! Completion of logging in/creating a user will bring the user to the main menu.
 
 #### Main Menu
 The main menu consists of the two main features of the game; either allowing the user to play the game, or if unfamiliar with the rules they have the option to view the rules.
@@ -83,7 +83,7 @@ The user is presented with a menu as followed:
 1. Play the game - which will start the game
 2. View the rules - which will load the game rules
 
-If the user inputs an incorrect key they are prompted and issued a warning in red to highlight the issue.
+If the user inputs an incorrect key, they are prompted and issued a warning in red to highlight the issue.
 
 #### View Rules
 Upon selecting this option, the user is presented a visual step by step guide on how to play the game! At the end of this the user is again presented with options which are as followed:
@@ -91,14 +91,14 @@ Upon selecting this option, the user is presented a visual step by step guide on
 2. Return to the main menu - which loads the main menu
 
 #### Play Game
-When the game is loaded the user is again presented with the title of the game on a 'new'/cleared screen and is shown a visual representation of their board! This will be the board they are prompted to place thier ships!
+When the game is loaded the user is again presented with the title of the game on a 'new'/cleared screen and is shown a visual representation of their board! This will be the board they are prompted to place their ships!
 
 The computer in the background will randomly place its ships when play game is selected.
 
 #### Place Ships - User Prompting
-Just after the user can see thier board, they will be prompted to place their ships - and will be told each time how many spaces wide their ships will be.
+Just after the user can see their board, they will be prompted to place their ships - and will be told each time how many spaces wide their ships will be.
 
-The user will then be asked if they'd like to place their ship Vertically(V), or Horizontially(H), which row(1-8) they'd like to select and which column(A-H) they'd like to select.
+The user will then be asked if they'd like to place their ship Vertically (V), or Horizontally (H), which row (1-8) they'd like to select and which column (A-H) they'd like to select.
 
 The ships that are placed will be visually represented by 'X' 's on the board.
 
@@ -106,23 +106,23 @@ If the user tries to place a ship that will go off the board; they are prompted 
 
 If the user tries to place a ship that will go over another ship; they are prompted with a warning in red and the steps will also repeat again.
 
-If the user inputs an incorrect key they are prompted and issued a warning in red to highlight the issue.
+If the user inputs an incorrect key, they are prompted and issued a warning in red to highlight the issue.
 
 #### Ships Placed
-Once all ships are placed, the user is presented with their placed ships board to remind them of where there ships have been placed and also with a new board - which will be their guessing board.
+Once all ships are placed, the user is presented with their placed ships board to remind them of where their ships have been placed and also with a new board - which will be their guessing board.
 
 #### Guess Ships
-When the user is presented with their guessing board, they will be prompted to guess a row(1-8) and to guess a column(A-H). This will be then checked agaisnt the random board that the computer generated right at the start of the game.
+When the user is presented with their guessing board, they will be prompted to guess a row(1-8) and to guess a column(A-H). This will be then checked against the random board that the computer generated right at the start of the game.
 
-If the user gets a 'hit' the board will visally show them an 'X' in the computers colour, if not the they will see '~' to represent water.
+If the user gets a 'hit' the board will visually show them an 'X' in the computers colour, if not the they will see '~' to represent water.
 
-The computer will randomly select a place to guess for it's ships to guess too. Displaying the opposite in colours.
+The computer will randomly select a place to guess for its ships to guess too. Displaying the opposite in colours.
 
 Both boards will be displayed for visual impact.
 
 If the user attempts to place a guess somewhere they have already guessed, they will be prompted in red and asked to try again. The computer will automatically try again if already guessing in the same spot.
 
-If the user inputs an incorrect key they are prompted and issued a warning in red to highlight the issue.
+If the user inputs an incorrect key, they are prompted and issued a warning in red to highlight the issue.
 
 #### Game Result
 When all 'X' 's have been revealed on either board - the user will be presented with the fact that they either lost, or they won!
@@ -145,10 +145,10 @@ Upon deciding to quit, the user is presented with a visual goodbye screen and th
 4. As a user, I want to be notified of any input errors throughout the entire game.
 5. As a user, I want to have the option to play the game again without having to re-load the game.
 6. As a user, I want to be notified if I have won or lost.
-7. As a user, I want play a different game each time against the computer.
+7. As a user, I want to play a different game each time against the computer.
 
 ### Owner
-8. As an owner, I want to provide the user with an colourful and interactive game that they can play.
+8. As an owner, I want to provide the user with a colourful and interactive game that they can play.
 9. As an owner, I want to provide the user with easy to navigate menu and prompts throughout the game.
 10. As an owner, I want to provide the user with visual feedback throughout the game.
 11. As an owner, I want to provide the user with a different experience each time they play the game.
@@ -159,12 +159,12 @@ Upon deciding to quit, the user is presented with a visual goodbye screen and th
 ## Design
 
 ### Structure
-For the visual structure of the game I wanted to ensure that all users are presented with clear and detailed representations of what's happening throughout the entire game.
+For the visual structure of the game, I wanted to ensure that all users are presented with clear and detailed representations of what's happening throughout the entire game.
 
-To achieve this I deciced to include various features such as;
+To achieve this, I decided to include various features such as;
 - Visually appealing art for the game's title.
 - Menus throughout to assist the user through the game.
-- Detailed visual represnetations of the boards used during the game.
+- Detailed visual representations of the boards used during the game.
 - Visual cues to indicate to the user if something has gone wrong.
 
 ### Technical Design
@@ -191,7 +191,7 @@ The colours I decided for the background of the game when viewed on the deployed
 <img src="docs/images/colours-html-fade.png">
 </details>
 
-The colours are a simple fade of the colours used in the game, but feature a more vivid variation. I think the colours used really help the game to pop. 
+The colours are a simple fade of the colours used in the game but feature a more vivid variation. I think the colours used really help the game to pop. 
 
 ## Main Features
 
@@ -233,7 +233,7 @@ The game rules are displayed to the user using time signals to allow the user to
 </details>
 
 ### Placing Board
-The ability to place ships onto a board is a key feature to the game as this allows the user to viually see their ships on the board - and allows them to place them in any straticgic manor they wish.
+The ability to place ships onto a board is a key feature to the game as this allows the user to visually see their ships on the board - and allows them to place them in any strategic manor they wish.
 
 - User Stories: 1, 8, 10
 
@@ -245,7 +245,7 @@ The ability to place ships onto a board is a key feature to the game as this all
 </details>
 
 ### Guessing Board
-The ability to guess the opponants ships is another key feature to the game, allowing us to see visually if we have made a hit or a miss. This also allows us to see a real time board of both the user and the computer to see how likely we are to win!
+The ability to guess the opponents ships is another key feature to the game, allowing us to see visually if we have made a hit or a miss. This also allows us to see a real time board of both the user and the computer to see how likely we are to win!
 
 - User Stories: 1, 8, 10
 
@@ -257,7 +257,7 @@ The ability to guess the opponants ships is another key feature to the game, all
 </details>
 
 ### Computer
-The use of the computer as an opponant allows for us to create a unqiue game experience each time, this is because the computer will randomly place it's ships and also randomly select too! So every game is different!
+The use of the computer as an opponent allows for us to create a unique game experience each time, this is because the computer will randomly place its ships and also randomly select too! So, every game is different!
 
 - User Stories: 7, 11
 
@@ -266,7 +266,7 @@ The use of the computer as an opponant allows for us to create a unqiue game exp
 </details>
 
 ### Input Errors
-The game has consistant visual feedback which will display to the user if there is ever a circumstance of input error. This provides the user a warning and details to them how to solve the issue and continue with the game.
+The game has consistent visual feedback which will display to the user if there is ever a circumstance of input error. This provides the user a warning and details to them how to solve the issue and continue with the game.
 
 - User Stories: 4, 9, 10
 
@@ -281,7 +281,7 @@ The game has consistant visual feedback which will display to the user if there 
 </details>
 
 ### End Game
-The end game features the ability to tell the user if they have won or lost the game! Immediatly after this the user as asked if they would like to play again - which will reset the game and its boards - or to quit the game.
+The end game features the ability to tell the user if they have won or lost the game! Immediately after this the user as asked if they would like to play again - which will reset the game and its boards - or to quit the game.
 
 - User Stories: 5, 6, 12
 
@@ -319,10 +319,10 @@ The social media links can be found on the live version of the Heroku app, allow
 - time
 
 #### Third Party Libraries
-- [Colorama](https://pypi.org/project/colorama/) - Justification - I decided to use this thrid party library as there is no built in featured library for colours in Python and I wanted to make the experience better for users.
-- [GSpread](https://pypi.org/project/gspread/) - Justification - I decided to include this third party library as I needed to manipulate and read the data stored in a Google Sheet in order to successfully create a user login. There is no built in library for this feature.
-- [Google Auth](https://pypi.org/project/google-auth/) -  - Justification - I decided to include this third party library as I needed to authenticate my connection to Google Spreadsheets. There is no built in library for this feature.
-- [Maskpass](https://pypi.org/project/maskpass/) - Justification - I decided to include this third party library as I decided that while a user was inputing a password - said password should be masked. There is no built in library for this feature.
+- [Colorama](https://pypi.org/project/colorama/) - Justification - I decided to use this third party-library as there is no built-in featured library for colours in Python and I wanted to make the experience better for users.
+- [GSpread](https://pypi.org/project/gspread/) - Justification - I decided to include this third-party library as I needed to manipulate and read the data stored in a Google Sheet in order to successfully create a user login. There is no built-in library for this feature.
+- [Google Auth](https://pypi.org/project/google-auth/) -  - Justification - I decided to include this third-party library as I needed to authenticate my connection to Google Spreadsheets. There is no built-in library for this feature.
+- [Maskpass](https://pypi.org/project/maskpass/) - Justification - I decided to include this third-party library as I decided that while a user was inputting a password - said password should be masked. There is no built-in library for this feature.
 
 ### APIs
 - [Google Sheets API](https://developers.google.com/sheets/api)
@@ -343,7 +343,7 @@ The social media links can be found on the live version of the Heroku app, allow
 ## Validation and Testing
 
 ### Python PEP8 Testing
-The [PEP8 Validation Service](http://pep8online.com/) was used to check the Python Code against guidlines and best practices. All code has been returned with no errors.
+The [PEP8 Validation Service](http://pep8online.com/) was used to check the Python Code against guidelines and best practices. All code has been returned with no errors.
 
 <details><summary></summary>
 <img src="docs/images/pep8-colours-validation.png">
@@ -361,7 +361,7 @@ The [PEP8 Validation Service](http://pep8online.com/) was used to check the Pyth
 
 | **User Story 2** | **User Action** | **Desired Outcome** | **Actual Outcome** |
 |------------------|-----------------|---------------------|--------------------|
-| As a user, I want to easily navigate the main menu. | User to choose an option from the main menu, and examine its contents | The user is presented with a couple of options in the main menu which they can choose from. | Works as intended. | 
+| As a user, I want to easily navigate the main menu. | User to choose an option from the main menu and examine its contents | The user is presented with a couple of options in the main menu which they can choose from. | Works as intended. | 
 | <details><summary></summary><img src="docs/images/user-story-testing/battleships-ust-2.png"></details> | | | |
 
 | **User Story 3** | **User Action** | **Desired Outcome** | **Actual Outcome** |
@@ -386,12 +386,12 @@ The [PEP8 Validation Service](http://pep8online.com/) was used to check the Pyth
 
 | **User Story 7** | **User Action** | **Desired Outcome** | **Actual Outcome** |
 |------------------|-----------------|---------------------|--------------------|
-| As a user, I want play a different game each time against the computer. | Play the game | The computer randomly generates a board each time the game is initiated. | Works as intended. | 
+| As a user, I want to play a different game each time against the computer. | Play the game | The computer randomly generates a board each time the game is initiated. | Works as intended. | 
 | <details><summary></summary><img src="docs/images/user-story-testing/battleships-ust-7.png"></details> | | | |
 
 | **User Story 8** | **User Action** | **Desired Outcome** | **Actual Outcome** |
 |------------------|-----------------|---------------------|--------------------|
-| As an owner, I want to provide the user with an colourful and interactive game that they can play. | User loads the game, at any point. | Several colourful features have been implemented to make the game more interactive and the user can visually see their boards and game instructions throughout. | Works as intended. | 
+| As an owner, I want to provide the user with a colourful and interactive game that they can play. | User loads the game, at any point. | Several colourful features have been implemented to make the game more interactive and the user can visually see their boards and game instructions throughout. | Works as intended. | 
 | <details><summary></summary><img src="docs/images/user-story-testing/battleships-ust-8.png"></details> | | | |
 
 | **User Story 9** | **User Action** | **Desired Outcome** | **Actual Outcome** |
@@ -401,7 +401,7 @@ The [PEP8 Validation Service](http://pep8online.com/) was used to check the Pyth
 
 | **User Story 10** | **User Action** | **Desired Outcome** | **Actual Outcome** |
 |------------------|-----------------|---------------------|--------------------|
-| As an owner, I want to provide the user with visual feedback throughout the game. | User play the game / incorrect input | Throughout all stages of the game the user is provided with visual feed back, this is particuallary prominent when they place their ships on their board or onto the computer's board or if they make a mistake with user input. | Works as intended. | 
+| As an owner, I want to provide the user with visual feedback throughout the game. | Users play the game / incorrect input | Throughout all stages of the game the user is provided with visual feedback, this is particularly prominent when they place their ships on their board or onto the computer's board or if they make a mistake with user input. | Works as intended. | 
 | <details><summary></summary><img src="docs/images/user-story-testing/battleships-ust-10-a.png"><img src="docs/images/user-story-testing/battleships-ust-10-b.png"></details> | | | |
 
 | **User Story 11** | **User Action** | **Desired Outcome** | **Actual Outcome** |
@@ -416,18 +416,18 @@ The [PEP8 Validation Service](http://pep8online.com/) was used to check the Pyth
 
 | **User Story 13** | **User Action** | **Desired Outcome** | **Actual Outcome** |
 |-------------------|-----------------|---------------------|--------------------|
-| As an owner, I want the user to be able to access my social media if they had any questions. | User load the game via Heroku | Underneath the game the social media area is clearly shown. | Works as intended. | 
+| As an owner, I want the user to be able to access my social media if they had any questions. | Users load the game via Heroku | Underneath the game the social media area is clearly shown. | Works as intended. | 
 | <details><summary></summary><img src="docs/images/user-story-testing/battleships-ust-13.png"></details> | | | |
 
 | **User Story 14** | **User Action** | **Desired Outcome** | **Actual Outcome** |
 |-------------------|-----------------|---------------------|--------------------|
-| As an owner, I want to provide the user with the ability to log in, and to keep track of how many times they have won. | User load the game | User is able to log into an account and keep track of the times they have won | Works as intended. |
+| As an owner, I want to provide the user with the ability to log in, and to keep track of how many times they have won. | Users load the game | User is able to log into an account and keep track of the times they have won | Works as intended. |
 | <details><summary></summary><img src="docs/images/user-story-testing/battleships-ust-14-a.png"><img src="docs/images/user-story-testing/battleships-ust-14-b.png"></details> | | | |
 ## Bugs and Errors
 
 | **Bug/Error** | **Resolution** |
 |---------------|----------------|
-| Upon adding the Colour class to the boards on the move functions, I noticed that the scoring counter wasn't working as intended and players could always guess at the same location and the computer could too. | To fix this I had to add the class to the  areas that checked agaisnt the text so it could check they matched exactly as printed in the code. |
+| Upon adding the Colour class to the boards on the move functions, I noticed that the scoring counter wasn't working as intended and players could always guess at the same location and the computer could too. | To fix this I had to add the class to the areas that checked against the text so it could check they matched exactly as printed in the code. |
 | After loading favicon from [favicon.io](https://favicon.io) and all its images to GitPod I noticed, that it was not loading onto the webpage. | After attempting to move files, and change directories with no success I opted to use Flaticon instead as the image could be sourced online |
 | When loading the game again after winning, I noticed that the boards had not reset, which would cause major game complications if the user had to play again. | I decided to create a function that reset all the boards after the game had completed fixing the issue |
 | Upon adding the login feature, I was presented with an error at the end while trying to increment the PLAYER_SCORE. | I had to convert the value from the spreadsheet to an integer, I done this by using the int() method. |
@@ -440,7 +440,7 @@ This application was deployed to Heroku via the Heroku Command Line Interface(CL
 2. From the new application's page on Heroku, navigate to settings.
 3. Under the Config-Vars option - set the key too 'PORT', and the value to '8000'.
 4. Also under Config-Vars - set another key to 'CREDS' and setting the value to the entire document of our creds.json file.
-4. Under the Buildpacks option - Add Python and NodeJS to the application - ensuring to make sure Python is on top of NodeJS.
+4. Under the build packs option - Add Python and NodeJS to the application - ensuring to make sure Python is on top of NodeJS.
 
 ### Deployent to Heroku Via CLI/GitPod
 1. Download and install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) client either to your machine or install your working IDE - I used GitPod.
@@ -451,7 +451,7 @@ This application was deployed to Heroku via the Heroku Command Line Interface(CL
 5. Then commit any changes and push the changes to GitHub.
 6. Using command "git push heroku main" - allowed me to deploy the application to the live site - once waiting for the site to build the application could then be used.
 
-There are alternative methods of deployment, however due to secuirty reasons some features have been disabled on Heroku's website for the time being.
+There are alternative methods of deployment, however due to security reasons some features have been disabled on Heroku's website for the time being.
 
 ## Credits
 
