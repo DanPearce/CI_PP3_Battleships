@@ -110,6 +110,11 @@ def existing_user():
         print(f"{Txt.MAIN}You have won {PLAYER_SCORE} time(s) against the" +
               " computer!")
         game_menu()
+    else:
+        print(Txt.ERROR + "Incorrect password!")
+        print(Txt.ERROR + "Please try again!")
+        time.sleep(1.5)
+        existing_user()
 
 
 def create_user():
