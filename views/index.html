@@ -1,45 +1,191 @@
-<body>
-    <button onclick="window.location.reload()">Play Battleships!</button>
-    <div id="terminal"></div>
+<body class="dp-has-bar">
+<!-- Dan Pearce portfolio header. Shared by all portfolio apps; icons are Font Awesome Free 7.1.0 (CC BY 4.0, https://fontawesome.com). -->
+<header class="dp-bar" id="dp-bar">
+  <div class="dp-bar__inner">
+    <a class="dp-bar__logo" href="https://danielpearce.co.uk/"><img src="/assets/DANPEARCE.png" width="1337" height="168" alt="Dan Pearce"></a>
+    <span class="dp-bar__title">Software Engineer</span>
+    <button class="dp-bar__toggle" type="button" aria-expanded="false" aria-controls="dp-bar-nav" aria-label="Toggle the portfolio menu"><span class="dp-bar__burger" aria-hidden="true"></span></button>
+    <nav class="dp-bar__nav" id="dp-bar-nav" aria-label="Portfolio">
+      <a href="https://danielpearce.co.uk/aboutme/"><svg class="dp-icon" viewBox="0 0 576 512" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><path d="M64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l448 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L64 32zm80 256l64 0c44.2 0 80 35.8 80 80 0 8.8-7.2 16-16 16L80 384c-8.8 0-16-7.2-16-16 0-44.2 35.8-80 80-80zm-24-96a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm240-48l112 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-112 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm0 96l112 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-112 0c-13.3 0-24-10.7-24-24s10.7-24 24-24z"/></svg> About Me</a>
+      <a href="https://danielpearce.co.uk/projects/"><svg class="dp-icon" viewBox="0 0 448 512" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><path d="M288 160l96 0 0-64-96 0 0 64zM0 160L0 80C0 53.5 21.5 32 48 32l352 0c26.5 0 48 21.5 48 48l0 96c0 26.5-21.5 48-48 48L48 224c-26.5 0-48-21.5-48-48l0-16zM160 416l224 0 0-64-224 0 0 64zM0 416l0-80c0-26.5 21.5-48 48-48l352 0c26.5 0 48 21.5 48 48l0 96c0 26.5-21.5 48-48 48L48 480c-26.5 0-48-21.5-48-48l0-16z"/></svg> Projects</a>
+      <a href="https://danielpearce.co.uk/contact/"><svg class="dp-icon" viewBox="0 0 512 512" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><path d="M48 64c-26.5 0-48 21.5-48 48 0 15.1 7.1 29.3 19.2 38.4l208 156c17.1 12.8 40.5 12.8 57.6 0l208-156c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48L48 64zM0 196L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-188-198.4 148.8c-34.1 25.6-81.1 25.6-115.2 0L0 196z"/></svg> Contact</a>
+      <a href="https://danielpearce.co.uk/dan-pearce-cv.pdf" target="_blank" rel="noopener" aria-label="Download my CV"><svg class="dp-icon" viewBox="0 0 448 512" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><path d="M256 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 210.7-41.4-41.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0l96-96c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 242.7 256 32zM64 320c-35.3 0-64 28.7-64 64l0 32c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-32c0-35.3-28.7-64-64-64l-46.9 0-56.6 56.6c-31.2 31.2-81.9 31.2-113.1 0L110.9 320 64 320zm304 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg></a>
+    </nav>
+  </div>
+</header>
+    <main class="stage">
+        <section class="term-window" id="term-window" aria-label="Battleships terminal">
+            <div class="term-titlebar" id="term-titlebar" tabindex="0" role="group" aria-label="Terminal window title bar. Drag to move the window, or focus it and use the arrow keys. Home puts it back.">
+                <span class="dots" aria-hidden="true"><i class="dot"></i><i class="dot"></i><i class="dot"></i></span>
+                <span class="term-title">battleships &mdash; python3 run.py</span>
+                <button class="term-restart" type="button" onclick="window.location.reload()">Play again</button>
+            </div>
+            <div id="terminal"></div>
+            <div class="term-grip" id="term-grip" tabindex="0" role="slider" aria-label="Terminal size. Drag, or use the arrow keys, to make the terminal larger or smaller." aria-valuemin="9" aria-valuemax="28" aria-valuenow="15"></div>
+        </section>
+    </main>
     <!--Footer-->
     <footer>
         <ul class="socials">
             <li>
-                <a href="https://www.instagram.com/danpearcedev/" target="_blank" rel="noopener" aria-label="Visit the developer's Instagram page(Opens in a new tab)"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.instagram.com/dnlpearce/" target="_blank" rel="noopener" aria-label="Visit the developer's Instagram page (opens in a new tab)"><svg class="sicon" viewBox="0 0 448 512" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><path d="M224.3 141a115 115 0 1 0 -.6 230 115 115 0 1 0 .6-230zm-.6 40.4a74.6 74.6 0 1 1 .6 149.2 74.6 74.6 0 1 1 -.6-149.2zm93.4-45.1a26.8 26.8 0 1 1 53.6 0 26.8 26.8 0 1 1 -53.6 0zm129.7 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM399 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
             </li>
             <li>
-                <a href="https://www.linkedin.com/in/danielapearce/" target="_blank" rel="noopener" aria-label="Visit the developer's Linkedin page(Opens in a new tab)"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://www.linkedin.com/in/danielanthonypearce/" target="_blank" rel="noopener" aria-label="Visit the developer's LinkedIn page (opens in a new tab)"><svg class="sicon" viewBox="0 0 448 512" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><path d="M416 32L31.9 32C14.3 32 0 46.5 0 64.3L0 447.7C0 465.5 14.3 480 31.9 480L416 480c17.6 0 32-14.5 32-32.3l0-383.4C448 46.5 433.6 32 416 32zM135.4 416l-66.4 0 0-213.8 66.5 0 0 213.8-.1 0zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77zM384.3 416l-66.4 0 0-104c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9l0 105.8-66.4 0 0-213.8 63.7 0 0 29.2 .9 0c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9l0 117.2z"/></svg></a>
             </li>
             <li>
-                <a href="https://github.com/DanPearce/CI_PP3_Battleships" target="_blank" rel="noopener" aria-label="View the code on the developer's GitHub page(Opens in a new tab)"><i class="fa-brands fa-github"></i></a>
+                <a href="https://x.com/dnlpearce" target="_blank" rel="noopener" aria-label="Visit the developer's X page (opens in a new tab)"><svg class="sicon" viewBox="0 0 448 512" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><path d="M357.2 48L427.8 48 273.6 224.2 455 464 313 464 201.7 318.6 74.5 464 3.8 464 168.7 275.5-5.2 48 140.4 48 240.9 180.9 357.2 48zM332.4 421.8l39.1 0-252.4-333.8-42 0 255.3 333.8z"/></svg></a>
+            </li>
+            <li>
+                <a href="https://github.com/DanPearce/CI_PP3_Battleships" target="_blank" rel="noopener" aria-label="View the code on the developer's GitHub page (opens in a new tab)"><svg class="sicon" viewBox="0 0 448 512" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><path d="M448 96c0-35.3-28.7-64-64-64L64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-320zM265.8 407.7c0-1.8 0-6 .1-11.6 .1-11.4 .1-28.8 .1-43.7 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7 17.9-26.6-7.5-56.6-7.5-83.2 0 0 0-31.8-22.2-45.7-17.9-9.1 22.9-3.5 40.6-1.7 45-10.6 11.7-15.6 20.8-15.6 39 0 63.6 37.3 69 74.3 73.1-4.8 4.3-9.1 11.7-10.6 22.3-9.5 4.3-33.8 11.7-48.3-13.9-9.1-15.8-25.5-17.1-25.5-17.1-16.2-.2-1.1 10.2-1.1 10.2 10.8 5 18.4 24.2 18.4 24.2 9.7 29.7 56.1 19.7 56.1 19.7 0 9 .1 21.7 .1 30.6 0 4.8 .1 8.6 .1 10 0 4.3-3 9.5-11.5 8-66-22.1-112.2-84.9-112.2-158.3 0-91.8 70.2-161.5 162-161.5S388 165.6 388 257.4c.1 73.4-44.7 136.3-110.7 158.3-8.4 1.5-11.5-3.7-11.5-8zm-90.5-54.8c-.2-1.5 1.1-2.8 3-3.2 1.9-.2 3.7 .6 3.9 1.9 .3 1.3-1 2.6-3 3-1.9 .4-3.7-.4-3.9-1.7zm-9.1 3.2c-2.2 .2-3.7-.9-3.7-2.4 0-1.3 1.5-2.4 3.5-2.4 1.9-.2 3.7 .9 3.7 2.4 0 1.3-1.5 2.4-3.5 2.4zm-14.3-2.2c-1.9-.4-3.2-1.9-2.8-3.2s2.4-1.9 4.1-1.5c2 .6 3.3 2.1 2.8 3.4-.4 1.3-2.4 1.9-4.1 1.3zm-12.5-7.3c-1.5-1.3-1.9-3.2-.9-4.1 .9-1.1 2.8-.9 4.3 .6 1.3 1.3 1.8 3.3 .9 4.1-.9 1.1-2.8 .9-4.3-.6zm-8.5-10c-1.1-1.5-1.1-3.2 0-3.9 1.1-.9 2.8-.2 3.7 1.3 1.1 1.5 1.1 3.3 0 4.1-.9 .6-2.6 0-3.7-1.5zm-6.3-8.8c-1.1-1.3-1.3-2.8-.4-3.5 .9-.9 2.4-.4 3.5 .6 1.1 1.3 1.3 2.8 .4 3.5-.9 .9-2.4 .4-3.5-.6zm-6-6.4c-1.3-.6-1.9-1.7-1.5-2.6 .4-.6 1.5-.9 2.8-.4 1.3 .7 1.9 1.8 1.5 2.6-.4 .9-1.7 1.1-2.8 .4z"/></svg></a>
             </li>
         </ul>
-        <p class="footerSignature">COPYRIGHT &copy; DAN PEARCE 2025</p>
-        <p class="footerSignature">Game developed by Dan Pearce<br><a href="https://danielpearce.co.uk/" target="_blank" rel="noopener" aria-label="Visit the website designer's page, Dan Pearce (opens in a new tab)">danpearce.software</a></p>
+        <p class="footerSignature">COPYRIGHT &copy; 2026 DAN PEARCE</p>
+        <p class="footerSignature">Game developed by Dan Pearce<br><a href="https://danielpearce.co.uk/" target="_blank" rel="noopener" aria-label="Visit Dan Pearce's website (opens in a new tab)">danielpearce.co.uk</a></p>
+        <!-- Icons: Font Awesome Free 7.1.0 (CC BY 4.0), https://fontawesome.com -->
     </footer>
-    <!--Font Awesome-->
-    <script src="https://kit.fontawesome.com/3f4aafba5f.js" crossorigin="anonymous"></script>
-
+    <script src="/portfolio-header.js"></script>
     <script>
         var term = new Terminal({
             cols: 120,
             rows: 38
         });
-        term.open(document.getElementById('terminal'));
-        term.writeln('Running startup command: python3 run.py');
-        term.writeln('');
+        term.open(document.getElementById("terminal"));
+        term.writeln("Running startup command: python3 run.py");
+        term.writeln("");
 
-        var ws = new WebSocket(location.protocol.replace('http', 'ws') + '//' + location.hostname + (location.port ? (
-            ':' + location.port) : '') + '/');
+        // Focus the terminal without letting the browser scroll the page to the cursor
+        function focusTerm() {
+            if (term.textarea) { term.textarea.focus({ preventScroll: true }); }
+        }
+
+        var ws = new WebSocket(location.protocol.replace("http", "ws") + "//" + location.hostname + (location.port ? (
+            ":" + location.port) : "") + "/");
 
         ws.onopen = function () {
-            new attach.attach(term, ws);
+            term.loadAddon(new AttachAddon.AttachAddon(ws));
+            // Set focus in the terminal
+            focusTerm();
         };
 
         ws.onerror = function (e) {
             console.log(e);
         };
-        // Set focus in the terminal
-        document.getElementsByClassName("xterm-helper-textarea")[0].focus();
+
+        // Make the terminal a window that can be moved around (mouse, touch or arrow keys)
+        (function () {
+            var win = document.getElementById("term-window");
+            var bar = document.getElementById("term-titlebar");
+            var x = 0, y = 0, startX = 0, startY = 0, baseX = 0, baseY = 0, dragging = false;
+            var headerHeight = 64, keep = 80;
+
+            function place() {
+                win.style.transform = "translate(" + x + "px," + y + "px)";
+                var r = win.getBoundingClientRect();
+                // keep the title bar reachable: never fully off screen, never under the header
+                if (r.top < headerHeight) { y += headerHeight - r.top; }
+                if (r.top > window.innerHeight - 48) { y -= r.top - (window.innerHeight - 48); }
+                if (r.right < keep) { x += keep - r.right; }
+                if (r.left > window.innerWidth - keep) { x -= r.left - (window.innerWidth - keep); }
+                win.style.transform = "translate(" + x + "px," + y + "px)";
+            }
+
+            bar.addEventListener("pointerdown", function (e) {
+                if (e.target.closest("button")) { return; }
+                dragging = true;
+                startX = e.clientX; startY = e.clientY; baseX = x; baseY = y;
+                bar.setPointerCapture(e.pointerId);
+                win.classList.add("dragging");
+            });
+            bar.addEventListener("pointermove", function (e) {
+                if (!dragging) { return; }
+                x = baseX + (e.clientX - startX);
+                y = baseY + (e.clientY - startY);
+                place();
+            });
+            function stop(e) {
+                if (!dragging) { return; }
+                dragging = false;
+                win.classList.remove("dragging");
+                if (bar.hasPointerCapture(e.pointerId)) { bar.releasePointerCapture(e.pointerId); }
+                focusTerm();
+            }
+            bar.addEventListener("pointerup", stop);
+            bar.addEventListener("pointercancel", stop);
+            bar.addEventListener("keydown", function (e) {
+                var step = e.shiftKey ? 80 : 20;
+                if (e.key === "ArrowLeft") { x -= step; }
+                else if (e.key === "ArrowRight") { x += step; }
+                else if (e.key === "ArrowUp") { y -= step; }
+                else if (e.key === "ArrowDown") { y += step; }
+                else if (e.key === "Home") { x = 0; y = 0; }
+                else { return; }
+                e.preventDefault();
+                place();
+            });
+            bar.addEventListener("dblclick", function (e) {
+                if (e.target.closest("button")) { return; }
+                x = 0; y = 0; place();
+            });
+            win.addEventListener("click", function (e) { if (!e.target.closest("button")) { focusTerm(); } });
+            window.addEventListener("resize", function () { fitToScreen(); place(); });
+
+            // Resizing scales the text, so the game's fixed 120 x 38 layout never wraps or breaks
+            var grip = document.getElementById("term-grip");
+            var minFont = 9, maxFont = 28;
+
+            function setFont(size) {
+                size = Math.max(minFont, Math.min(maxFont, Math.round(size * 2) / 2));
+                term.options.fontSize = size;
+                grip.setAttribute("aria-valuenow", String(size));
+            }
+
+            // Never wider than the screen: shrink the text until the whole window fits
+            function fitToScreen() {
+                var limit = window.innerWidth - 32;
+                while (term.options.fontSize > minFont && win.getBoundingClientRect().width > limit) {
+                    setFont(term.options.fontSize - 0.5);
+                }
+            }
+
+            var resizing = false, gx = 0, gy = 0, gw = 0, gh = 0, gfont = 0, gleft = 0;
+            grip.addEventListener("pointerdown", function (e) {
+                resizing = true;
+                var r = win.getBoundingClientRect();
+                gx = e.clientX; gy = e.clientY; gw = r.width; gh = r.height; gleft = r.left; gfont = term.options.fontSize;
+                grip.setPointerCapture(e.pointerId);
+                win.classList.add("dragging");
+                e.preventDefault();
+            });
+            grip.addEventListener("pointermove", function (e) {
+                if (!resizing) { return; }
+                var scale = ((gw + (e.clientX - gx)) / gw + (gh + (e.clientY - gy)) / gh) / 2;
+                setFont(gfont * scale);
+                fitToScreen();
+                // keep the top-left corner where it was, so the handle follows the pointer
+                x += gleft - win.getBoundingClientRect().left;
+                place();
+            });
+            function stopResize(e) {
+                if (!resizing) { return; }
+                resizing = false;
+                win.classList.remove("dragging");
+                if (grip.hasPointerCapture(e.pointerId)) { grip.releasePointerCapture(e.pointerId); }
+                focusTerm();
+            }
+            grip.addEventListener("pointerup", stopResize);
+            grip.addEventListener("pointercancel", stopResize);
+            grip.addEventListener("keydown", function (e) {
+                if (e.key === "ArrowRight" || e.key === "ArrowUp") { setFont(term.options.fontSize + 1); }
+                else if (e.key === "ArrowLeft" || e.key === "ArrowDown") { setFont(term.options.fontSize - 1); }
+                else { return; }
+                e.preventDefault();
+                fitToScreen();
+                place();
+            });
+
+            fitToScreen();
+            place();
+        })();
     </script>
 </body>
