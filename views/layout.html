@@ -5,189 +5,212 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xterm/3.14.5/xterm.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xterm/3.14.5/addons/attach/attach.js"></script>
-    <link rel="icon" sizes="any" href="https://cdn-icons.flaticon.com/png/512/870/premium/870119.png?token=exp=1651067532~hmac=0710f71c55ab1413854ddae52cd70830">
     <title>Battleships! by Dan Pearce</title>
+    <meta name="description" content="Battleships, the all-time classic, played in your browser. Built with Python by Dan Pearce.">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xterm/xterm@6.0.0/css/xterm.css" integrity="sha384-n2n7twoohnW+d3myBKaUgl7DSiwidw6MkQy9oesGzkPpMjejKRR3XlnD+5yCdtBD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Unbounded:wght@300;500;700&amp;display=swap">
+    <link rel="stylesheet" href="/portfolio-header.css">
+    <script src="https://cdn.jsdelivr.net/npm/@xterm/xterm@6.0.0/lib/xterm.js" integrity="sha384-f/1U6Z9wM4D71a5eRXEZnyOTMOvjqxr2XLwh+Go1OvIl3L3tOcvUrzudnhbECwl4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@xterm/addon-attach@0.12.0/lib/addon-attach.js" integrity="sha384-QvZGN56JykevCfOFRYBWJ449GYZCiDpsbk7sqQk5kRRr9XhCsmJJbA7jxexK+x0m" crossorigin="anonymous"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+        /* Same palette and background as https://danielpearce.co.uk */
+        :root {
+            color-scheme: dark;
+            --bg: #3e365b;
+            --text: #f5f6fb;
+            --muted: #b8b9c6;
+            --accent: #9b6cff;
+            --accent-2: #d08cff;
+            --card: rgba(15, 17, 26, 0.7);
+            --stroke: rgba(255, 255, 255, 0.08);
+            --shadow: 0 40px 120px rgba(0, 0, 0, 0.6);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
 
         body {
-            font-family: 'Nunito', sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            font-family: "Space Grotesk", sans-serif;
+            -webkit-font-smoothing: antialiased;
+            color: var(--text);
+            background-color: var(--bg);
+            background-image:
+                radial-gradient(600px 500px at 8% 0%, rgba(125, 249, 255, 0.22), transparent 60%),
+                radial-gradient(700px 600px at 90% 10%, rgba(125, 249, 255, 0.22), transparent 60%),
+                radial-gradient(800px 700px at 40% 100%, rgba(188, 111, 255, 0.1), transparent 60%),
+                linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+            background-size: auto, auto, auto, 80px 80px, 80px 80px;
+            background-position: center, center, center, center, center;
+            background-attachment: fixed;
             display: flex;
             flex-direction: column;
             align-items: center;
-            align-content: center;
-            background: rgb(9,3,108);
-            background: linear-gradient(90deg, rgba(9,3,108,1) 0%, rgba(9,102,121,1) 50%, rgba(247,46,46,1) 100%);
-            background-attachment: fixed;
+            overflow-x: hidden;
         }
 
-        /**
-        * Default styles for xterm.js
-        */
+        /* Soft colour wash and grain over the whole page, as on the portfolio site */
+        body::before,
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+        }
 
-        .xterm {
-            font-feature-settings: "liga"0;
+        body::before {
+            background:
+                radial-gradient(600px 500px at 10% -10%, rgba(125, 249, 255, 0.18), transparent 60%),
+                radial-gradient(700px 600px at 110% 0%, rgba(255, 154, 213, 0.16), transparent 60%),
+                radial-gradient(800px 700px at 40% 120%, rgba(255, 210, 111, 0.14), transparent 60%);
+            filter: blur(2px);
+        }
+
+        body::after {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.3'/%3E%3C/svg%3E");
+            mix-blend-mode: soft-light;
+            opacity: 0.35;
+        }
+
+        .stage {
             position: relative;
+            z-index: 1;
+            width: 100%;
+            padding: 32px 16px 8px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* The floating terminal window */
+        .term-window {
+            position: relative;
+            max-width: 100%;
+            background: var(--card);
+            border: 1px solid var(--stroke);
+            border-radius: 14px;
+            box-shadow: var(--shadow);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+        }
+
+        .term-window.dragging {
             user-select: none;
-            -ms-user-select: none;
             -webkit-user-select: none;
         }
 
-        .xterm.focus,
-        .xterm:focus {
-            outline: none;
+        .term-titlebar {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 14px;
+            background: rgba(24, 27, 40, 0.85);
+            border-bottom: 1px solid var(--stroke);
+            cursor: grab;
+            touch-action: none;
         }
 
-        .xterm .xterm-helpers {
-            position: absolute;
-            top: 0;
-            /**
-        * The z-index of the helpers must be higher than the canvases in order for
-        * IMEs to appear on top.
-        */
-            z-index: 5;
+        .term-window.dragging .term-titlebar {
+            cursor: grabbing;
         }
 
-        .xterm .xterm-helper-textarea {
-            padding: 0;
-            border: 0;
-            margin: 0;
-            /* Move textarea out of the screen to the far left, so that the cursor is not visible */
-            position: absolute;
-            opacity: 0;
-            left: -9999em;
-            top: 0;
-            width: 0;
-            height: 0;
-            z-index: -5;
-            /** Prevent wrapping so the IME appears against the textarea at the correct position */
+        .term-titlebar:focus-visible {
+            outline: 2px solid var(--accent-2);
+            outline-offset: -2px;
+        }
+
+        .dots {
+            display: inline-flex;
+            gap: 7px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ff5f57;
+        }
+
+        .dot:nth-child(2) { background: #febc2e; }
+        .dot:nth-child(3) { background: #28c840; }
+
+        .term-title {
+            flex: 1;
+            text-align: center;
+            font-family: "Unbounded", sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.02em;
+            color: var(--muted);
             white-space: nowrap;
             overflow: hidden;
-            resize: none;
+            text-overflow: ellipsis;
         }
 
-        .xterm .composition-view {
-            /* TODO: Composition position got messed up somewhere */
-            background: #000;
-            color: #FFF;
-            display: none;
-            position: absolute;
-            white-space: nowrap;
-            z-index: 1;
-        }
-
-        .xterm .composition-view.active {
-            display: block;
-        }
-
-        .xterm .xterm-viewport {
-            /* On OS X this is required in order for the scroll bar to appear fully opaque */
-            background-color: #000;
-            overflow-y: scroll;
-            cursor: default;
-            position: absolute;
-            right: 0;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            background-color: rgb(0, 0, 0);
-            width: 730px;
-        }
-
-        .xterm .xterm-screen {
-            position: relative;
-        }
-
-        .xterm .xterm-screen canvas {
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-
-        .xterm .xterm-scroll-area {
-            visibility: hidden;
-        }
-
-        .xterm-char-measure-element {
-            display: inline-block;
-            visibility: hidden;
-            position: absolute;
-            top: 0;
-            left: -9999em;
-            line-height: normal;
-        }
-
-        .xterm {
-            cursor: text;
-        }
-
-        .xterm.enable-mouse-events {
-            /* When mouse events are enabled (eg. tmux), revert to the standard pointer cursor */
-            cursor: default;
-        }
-
-        .xterm.xterm-cursor-pointer {
+        .term-restart {
+            font-family: "Unbounded", sans-serif;
+            font-size: 0.7rem;
+            padding: 6px 12px;
+            color: var(--text);
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            border: none;
+            border-radius: 8px;
             cursor: pointer;
         }
 
-        .xterm.column-select.focus {
-            /* Column selection mode */
-            cursor: crosshair;
+        .term-restart:hover {
+            filter: brightness(1.12);
         }
 
-        .xterm .xterm-accessibility,
-        .xterm .xterm-message {
+        .term-restart:focus-visible {
+            outline: 2px solid var(--text);
+            outline-offset: 2px;
+        }
+
+        #terminal {
+            padding: 12px;
+            background: #0b0c14;
+            overflow-x: auto;
+        }
+
+        /* Corner handle that scales the terminal (the game's 120 x 38 grid stays intact) */
+        .term-grip {
             position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            right: 0;
-            z-index: 10;
-            color: transparent;
+            right: 3px;
+            bottom: 3px;
+            width: 18px;
+            height: 18px;
+            cursor: nwse-resize;
+            touch-action: none;
+            border-radius: 4px;
+            background:
+                linear-gradient(135deg, transparent 0 45%, rgba(245, 246, 251, 0.55) 45% 52%, transparent 52% 62%,
+                    rgba(245, 246, 251, 0.55) 62% 69%, transparent 69% 79%, rgba(245, 246, 251, 0.55) 79% 86%, transparent 86%);
         }
 
-        .xterm .live-region {
-            position: absolute;
-            left: -9999px;
-            width: 1px;
-            height: 1px;
-            overflow: hidden;
-        }
-
-        .xterm-dim {
-            opacity: 0.5;
-        }
-
-        .xterm-underline {
-            text-decoration: underline;
-        }
-
-        button {
-            width: 200px;
-            height: 40px;
-            background-color: rgba(247,46,46,1);
-            border: 1px solid grey;
-            color: #ecedf4;
-            text-transform: uppercase;
-            margin: 10px;
-            border-radius: 8px;
-        }
-
-        button:hover {
-            background-color: rgba(9,3,108,1);
-            
+        .term-grip:focus-visible {
+            outline: 2px solid var(--accent-2);
+            outline-offset: 1px;
         }
 
         /*Footer*/
         footer {
+            position: relative;
+            z-index: 1;
             text-align: center;
+            margin-top: 8px;
         }
 
         .socials {
             padding: 15px 0;
+            margin: 0;
+            list-style: none;
             font-size: 180%;
         }
 
@@ -197,17 +220,27 @@
         }
 
         .socials a, .footerSignature a {
-            color: #ecedf4;
+            color: var(--text);
             text-decoration: none;
         }
 
         a:hover {
-            color: #8c8c8c;
+            color: var(--muted);
         }
 
         .footerSignature {
             font-size: 15px;
-            color: #ecedf4;
+            color: var(--muted);
+            margin: 4px 0;
+        }
+
+        .sicon {
+            display: inline-block;
+            vertical-align: -0.125em;
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            html { scroll-behavior: smooth; }
         }
     </style>
 </head>

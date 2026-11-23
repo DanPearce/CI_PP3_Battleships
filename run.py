@@ -64,7 +64,7 @@ def title():
           f" {Txt.NEUT}VS " + f"{Txt.COMP}Computer")
     print(" ")
     print(Txt.MAIN + Txt.BRIGHT + "Developed by: Dan Pearce -  https://" +
-          "danpearce.software/")
+          "danielpearce.co.uk/")
     print(" ")
     new_line()
 
@@ -80,7 +80,7 @@ def mid_game_title():
           f"{Txt.COMP}P " + f"{Txt.USER}S")
     print(" ")
     print(Txt.MAIN + Txt.BRIGHT + "Developed by: Dan Pearce -  https://" +
-          "danpearce.software/")
+          "danielpearce.co.uk/")
 
 
 def clear():
