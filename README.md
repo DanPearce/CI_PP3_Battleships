@@ -1,7 +1,7 @@
 # Battleships! - The command-line version of the all time classic!
 Developed by, [Dan Pearce](https://danpearce.software/)
 
-[View the live application](https://ci-pp3-battleships-danpearce.herokuapp.com/)
+[View the live application](https://battleships.danielpearce.co.uk/)
 
 ![Screen Capture](docs/images/battleships-sc.png)
 
@@ -433,6 +433,8 @@ The [PEP8 Validation Service](http://pep8online.com/) was used to check the Pyth
 | Upon adding the login feature, I was presented with an error at the end while trying to increment the PLAYER_SCORE. | I had to convert the value from the spreadsheet to an integer, I done this by using the int() method. |
 
 ## Deployment
+
+> **Hosting update (November 2026):** the live site no longer runs on Heroku. It is now self-hosted on my own server (Docker containers behind Caddy, with PostgreSQL where needed). The Heroku steps below describe the original deployment and are kept as a record.
 This application was deployed to Heroku via the Heroku Command Line Interface(CLI).
 
 ### Heroku Application Set-up
