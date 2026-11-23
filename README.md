@@ -1,5 +1,5 @@
 # Battleships! - The command-line version of the all time classic!
-Developed by, [Dan Pearce](https://danpearce.software/)
+Developed by, [Dan Pearce](https://danielpearce.co.uk/)
 
 [View the live application](https://battleships.danielpearce.co.uk/)
 

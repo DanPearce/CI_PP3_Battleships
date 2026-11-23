@@ -5,7 +5,7 @@ Uses Google Sheets API.
 # Language and Script Imports
 import time
 import gspread
-import maskpass
+import masked_input
 from google.oauth2 import service_account
 from run import clear, new_line, game_menu, title
 from colours import Colours as Txt
@@ -100,7 +100,7 @@ def existing_user():
     PLAYER_USERNAME = USERNAME_DATA.row_values(USERNAME_ROW)[0]
     PLAYER_PASSWORD = USERNAME_DATA.row_values(USERNAME_ROW)[1]
     PLAYER_SCORE = int(USERNAME_DATA.row_values(USERNAME_ROW)[2])
-    username_pass = maskpass.askpass(prompt="Password:", mask="*")
+    username_pass = masked_input.askpass(prompt="Password:", mask="*")
 
     if username_pass == PLAYER_PASSWORD:
         new_line()
@@ -148,20 +148,20 @@ def create_user():
         time.sleep(1)
         print(f"{Txt.USER}{USERNAME} is available!")
         new_line()
-        new_user_pass = maskpass.askpass(prompt="Create password:", mask="*")
+        new_user_pass = masked_input.askpass(prompt="Create password:", mask="*")
         while len(new_user_pass) >= 15:
             new_line()
             print(Txt.ERROR + "Password cannot be longer than 15 characters.")
             new_line()
             time.sleep(1)
-            new_user_pass = maskpass.askpass(prompt="Create password:",
+            new_user_pass = masked_input.askpass(prompt="Create password:",
                                              mask="*")
         while " " in new_user_pass:
             new_line()
             print(Txt.ERROR + "Password cannot contain spaces!")
             new_line()
             time.sleep(1)
-            new_user_pass = maskpass.askpass(prompt="Create password:",
+            new_user_pass = masked_input.askpass(prompt="Create password:",
                                              mask="*")
         score = 0
         add_new_user(new_user, new_user_pass, score)
