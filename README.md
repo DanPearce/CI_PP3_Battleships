@@ -434,6 +434,17 @@ The [PEP8 Validation Service](http://pep8online.com/) was used to check the Pyth
 
 ## Deployment
 
+### Current hosting and automatic deployment (since November 2026)
+
+The live site is at <https://battleships.danielpearce.co.uk/>. It runs in a Docker container on a self-hosted server behind HTTPS.
+
+- Every pull request is checked by GitHub Actions (`.github/workflows/ci-deploy.yml`): the game files are syntax-checked (Node.js and Python).
+- Every change merged to `main` that passes the checks is **deployed automatically**. GitHub connects to the server over SSH with a key that can deploy only this project and only the latest commit of `main`; the server builds the new version, waits for the site to answer, and puts the previous version back (and emails an alert) if anything fails.
+- `main` is protected: no force-pushes or deleting the branch, and the `test` check must pass before changes are merged.
+- To deploy a change: merge a pull request into `main`. To redeploy, re-run the workflow in the repository's Actions tab.
+
+The steps below describe how the project was first deployed and are kept as a record of the original deployment.
+
 > **Hosting update (November 2026):** the live site no longer runs on Heroku. It is now self-hosted on my own server (Docker containers behind Caddy, with PostgreSQL where needed). The Heroku steps below describe the original deployment and are kept as a record.
 This application was deployed to Heroku via the Heroku Command Line Interface(CLI).
 
